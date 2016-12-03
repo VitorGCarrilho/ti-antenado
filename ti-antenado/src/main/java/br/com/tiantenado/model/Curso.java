@@ -8,9 +8,16 @@ public class Curso {
 	private String dsCurso;
 	private Date dtCurso;
 	private Usuario professor;
+	private int cdModulo;
 	
 	
 	
+	public int getCdModulo() {
+		return cdModulo;
+	}
+	public void setCdModulo(int cdModulo) {
+		this.cdModulo = cdModulo;
+	}
 	public long getCodigo() {
 		return codigo;
 	}
