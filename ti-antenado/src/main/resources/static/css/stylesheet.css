@@ -1,9 +1,61 @@
+/* ******** CORES ******** */
+
+/*
+  preto: #414853
+  vermelho: #cc170a
+  amarelo: #f6ab42
+  azul: #0181f9
+  azul mais claro: #91b5d4
+  azul claro: #f6ab42
+  azul escuro: #cc170a
+  cinza-claro-azulado: #a0b5cb
+  cinza-escuro-azulado: #367eab
+  clouds: #ecf0f1
+
+*/
+
+/* ******** FONTES ******** */
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+*{
+	font-family: 'Josefin Sans', sans-serif;	
+	color: #414853;
+}
+
+
+/* ******** BACKGROUND ******** */
+body{
+	background-color: #ecf0f1;
+}
+
 .menu{
 	border-bottom: 1px solid #bdc3c7;
 }
 .teste{
 	background-color: #34495e;
 }
-.text-gray{
-	color: #bdc3c7;
+
+/* ******** FONTES ******** */
+
+.texto-cinza-azulado{
+	color: #367eab;
+}
+.texto-branco{
+	color: #fff;
+}
+.texto{
+	font-size: 20px;
+}
+.texto-botao{
+	font-size: 16px;
+}
+.borda-esquerda{
+	border-left: 10px solid #367eab;
+}
+.margem-direita{
+	margin-right: 10px;
+}
+.entrar{
+	margin-top: 0px;
 }
