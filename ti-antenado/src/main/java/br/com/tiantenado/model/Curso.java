@@ -3,13 +3,12 @@ package br.com.tiantenado.model;
 import java.util.Date;
 
 public class Curso {
-	private long codigo;
+	private long cdCurso;
 	private String nmCurso;
 	private String dsCurso;
 	private Date dtCurso;
 	private Usuario professor;
 	private int cdModulo;
-	
 	
 	
 	public int getCdModulo() {
@@ -18,11 +17,11 @@ public class Curso {
 	public void setCdModulo(int cdModulo) {
 		this.cdModulo = cdModulo;
 	}
-	public long getCodigo() {
-		return codigo;
+	public long getCdCurso() {
+		return cdCurso;
 	}
-	public void setCodigo(long codigo) {
-		this.codigo = codigo;
+	public void setCdCurso(long cdCurso) {
+		this.cdCurso = cdCurso;
 	}
 	public String getNmCurso() {
 		return nmCurso;
