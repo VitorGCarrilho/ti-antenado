@@ -19,5 +19,10 @@ public class TiAntenadoController {
 		
 		return "index";
 	}
+	@RequestMapping("/curso")
+	public String curso(){
+		
+		return "curso";
+	}
 	
 }

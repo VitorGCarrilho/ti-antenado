@@ -25,15 +25,16 @@
 
 
 /* ******** BACKGROUND ******** */
-body{
+.bg-clouds{
 	background-color: #ecf0f1;
 }
-
+.banner{
+	background-image: url("../images/banner2.jpg");
+	height: 250px;
+	width: 100%;
+}
 .menu{
 	border-bottom: 1px solid #bdc3c7;
-}
-.teste{
-	background-color: #34495e;
 }
 
 /* ******** FONTES ******** */
@@ -47,6 +48,9 @@ body{
 .texto{
 	font-size: 20px;
 }
+.texto-tabela{
+	font-size: 16px;
+}
 .texto-botao{
 	font-size: 16px;
 }
@@ -58,4 +62,9 @@ body{
 }
 .entrar{
 	margin-top: 0px;
+}
+
+/* ******** TABELA ******** */
+.fundo-branco{
+	background-color: #fff;
 }
