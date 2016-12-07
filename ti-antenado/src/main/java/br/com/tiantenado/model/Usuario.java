@@ -2,13 +2,17 @@ package br.com.tiantenado.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -16,7 +20,6 @@ import javax.persistence.Table;
 public class Usuario {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="CD_USUARIO")
 	private long cdUsuario;
 	
@@ -44,6 +47,10 @@ public class Usuario {
 	@Enumerated(EnumType.STRING)
 	@Column(name="ID_TIPO_USUARIO")
 	private TipoUsuario tipoUsuario;
+	
+	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@PrimaryKeyJoinColumn 
+	private Usuario professor;
 	
 	
 	
@@ -100,6 +107,71 @@ public class Usuario {
 	}
 	public void setTipoUsuario(TipoUsuario tipoUsuario) {
 		this.tipoUsuario = tipoUsuario;
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (cdUsuario ^ (cdUsuario >>> 32));
+		result = prime * result + ((dsEmail == null) ? 0 : dsEmail.hashCode());
+		result = prime * result + ((dsEndereco == null) ? 0 : dsEndereco.hashCode());
+		result = prime * result + ((dsInstituicao == null) ? 0 : dsInstituicao.hashCode());
+		result = prime * result + ((dtNascimento == null) ? 0 : dtNascimento.hashCode());
+		result = prime * result + ((nmUsuario == null) ? 0 : nmUsuario.hashCode());
+		result = prime * result + ((nrCel == null) ? 0 : nrCel.hashCode());
+		result = prime * result + ((nrFone == null) ? 0 : nrFone.hashCode());
+		result = prime * result + ((tipoUsuario == null) ? 0 : tipoUsuario.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Usuario other = (Usuario) obj;
+		if (cdUsuario != other.cdUsuario)
+			return false;
+		if (dsEmail == null) {
+			if (other.dsEmail != null)
+				return false;
+		} else if (!dsEmail.equals(other.dsEmail))
+			return false;
+		if (dsEndereco == null) {
+			if (other.dsEndereco != null)
+				return false;
+		} else if (!dsEndereco.equals(other.dsEndereco))
+			return false;
+		if (dsInstituicao == null) {
+			if (other.dsInstituicao != null)
+				return false;
+		} else if (!dsInstituicao.equals(other.dsInstituicao))
+			return false;
+		if (dtNascimento == null) {
+			if (other.dtNascimento != null)
+				return false;
+		} else if (!dtNascimento.equals(other.dtNascimento))
+			return false;
+		if (nmUsuario == null) {
+			if (other.nmUsuario != null)
+				return false;
+		} else if (!nmUsuario.equals(other.nmUsuario))
+			return false;
+		if (nrCel == null) {
+			if (other.nrCel != null)
+				return false;
+		} else if (!nrCel.equals(other.nrCel))
+			return false;
+		if (nrFone == null) {
+			if (other.nrFone != null)
+				return false;
+		} else if (!nrFone.equals(other.nrFone))
+			return false;
+		if (tipoUsuario != other.tipoUsuario)
+			return false;
+		return true;
 	}
 	
 	

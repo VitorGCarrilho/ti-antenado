@@ -2,6 +2,7 @@ package br.com.tiantenado.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -33,7 +34,8 @@ public class Curso {
 	private Date dtCurso;
 	
 	
-	@OneToOne(fetch = FetchType.LAZY)
+	
+	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@PrimaryKeyJoinColumn 
 	private Usuario professor;
 	
@@ -78,6 +80,54 @@ public class Curso {
 		this.professor = professor;
 	}
 	
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (cdCurso ^ (cdCurso >>> 32));
+		result = prime * result + (int) (cdModulo ^ (cdModulo >>> 32));
+		result = prime * result + ((dsCurso == null) ? 0 : dsCurso.hashCode());
+		result = prime * result + ((dtCurso == null) ? 0 : dtCurso.hashCode());
+		result = prime * result + ((nmCurso == null) ? 0 : nmCurso.hashCode());
+		result = prime * result + ((professor == null) ? 0 : professor.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Curso other = (Curso) obj;
+		if (cdCurso != other.cdCurso)
+			return false;
+		if (cdModulo != other.cdModulo)
+			return false;
+		if (dsCurso == null) {
+			if (other.dsCurso != null)
+				return false;
+		} else if (!dsCurso.equals(other.dsCurso))
+			return false;
+		if (dtCurso == null) {
+			if (other.dtCurso != null)
+				return false;
+		} else if (!dtCurso.equals(other.dtCurso))
+			return false;
+		if (nmCurso == null) {
+			if (other.nmCurso != null)
+				return false;
+		} else if (!nmCurso.equals(other.nmCurso))
+			return false;
+		if (professor == null) {
+			if (other.professor != null)
+				return false;
+		} else if (!professor.equals(other.professor))
+			return false;
+		return true;
+	}
 	
 	
 }

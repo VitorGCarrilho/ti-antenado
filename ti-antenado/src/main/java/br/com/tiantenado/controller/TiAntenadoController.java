@@ -21,12 +21,13 @@ public class TiAntenadoController {
 	
 	@RequestMapping("/home")
 	public String home(){
-		List<Curso> cursosList = cursos.findAll();
+		//Verificar porque alguns professores estão retornando nulo
+		/*List<Curso> cursosList = cursos.findAll();
 		for(Curso curso : cursosList){
 			System.out.println(curso.getNmCurso());
 			Usuario professor = curso.getProfessor();
 			System.out.println(professor.getNmUsuario());
-		}
+		}*/
 		
 		
 		return "index";
