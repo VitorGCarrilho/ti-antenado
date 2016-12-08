@@ -5,7 +5,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import br.com.tiantenado.config.DataBaseConfig;
 import br.com.tiantenado.dao.CursosDao;
@@ -18,7 +20,7 @@ import br.com.tiantenado.repository.UsuarioRepository;
 public class TiAntenadoController {
 
 	@Autowired
-	private CursoRepository cursos;
+	private CursoRepository cursosRepository;
 	
 	@Autowired
 	private UsuarioRepository usuarioRepository;
@@ -38,9 +40,19 @@ public class TiAntenadoController {
 		return "index";
 	}
 	@RequestMapping("/curso")
-	public String curso(){
+	public ModelAndView listaCursos(){
+		ModelAndView mv = new ModelAndView("PesquisaCursos");
+		List<Curso> cursos = cursosRepository.findAll();
+		mv.addObject("cursos",cursos);
 		
-		return "curso";
+		return mv;
+	}
+	@RequestMapping("/curso/{id}")
+	public String curso(@PathVariable Long id){
+		ModelAndView mv = new ModelAndView();
+		Curso curso = cursosRepository.findOne(id);
+		mv.addObject("curso", curso);
+		return "index";
 	}
 	
 }

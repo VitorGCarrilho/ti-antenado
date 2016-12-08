@@ -17,7 +17,7 @@
 <body>
 
 	<!-- INICIO CONTAINER -->
-	<nav class="navbar navbar-inverse">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
 			<!--  <div class="navbar-header">
 				<a class="navbar-brand" href="#">WebSiteName</a>
@@ -55,7 +55,7 @@
 				<br /> <br />
 				<h1>Confira nossos cursos</h1>
 				<div class="table-responsive">
-				<table class="table table-bordered fundo-branco texto-tabela">
+				<table class="table table-bordered table-striped" >
 					<thead>
 						<tr>
 							<th>Data</th>
@@ -64,20 +64,10 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>04/03/2017</td>
-							<td>Introdução a HTML/CSS</td>
-							<td>Ernane Augusto</td>
-						</tr>
-						<tr>
-							<td>11/03/2017</td>
-							<td>Java MVC</td>
-							<td>Vitor Carrilho</td>
-						</tr>
-						<tr>
-							<td>18/03/2017</td>
-							<td>PHP</td>
-							<td>Giovane Ribeiro</td>
+						<tr th:each="curso : ${cursos}">
+							<td th:text="${curso.dtCurso}">04/03/2017</td>
+							<td ><a th:text="${curso.nmCurso}" th:href="@{/curso/{codigo}(codigo=${curso.cdCurso})}"></a></td>
+							<td th:text="${curso.professor.nmUsuario}">Ernane Augusto</td>
 						</tr>
 					</tbody>
 				</table>
