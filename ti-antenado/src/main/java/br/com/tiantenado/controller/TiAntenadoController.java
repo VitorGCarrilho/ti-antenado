@@ -48,11 +48,11 @@ public class TiAntenadoController {
 		return mv;
 	}
 	@RequestMapping("/curso/{id}")
-	public String curso(@PathVariable Long id){
-		ModelAndView mv = new ModelAndView();
+	public ModelAndView curso(@PathVariable Long id){
+		ModelAndView mv = new ModelAndView("DetalhesCurso");
 		Curso curso = cursosRepository.findOne(id);
 		mv.addObject("curso", curso);
-		return "index";
+		return mv;
 	}
 	
 }

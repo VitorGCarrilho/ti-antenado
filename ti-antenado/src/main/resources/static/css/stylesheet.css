@@ -33,6 +33,20 @@
 	height: 250px;
 	width: 100%;
 }
+.imgPerfil{
+	height: 250px;
+	background-repeat: no-repeat;
+    background-position: center; 
+    -moz-border-radius: 70px; 
+   -webkit-border-radius: 70px; 
+   border-radius: 70px;
+}
+.detalhePerfilProfessor{
+	padding: 20px;
+}
+.detalheCurso{
+	padding: 20px;
+}
 .menu{
 	border-bottom: 1px solid #bdc3c7;
 }

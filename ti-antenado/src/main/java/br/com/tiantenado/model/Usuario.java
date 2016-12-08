@@ -49,12 +49,48 @@ public class Usuario {
 	@Column(name="ID_TIPO_USUARIO")
 	private TipoUsuario tipoUsuario;
 	
+	@Column(name="DS_IMAGEM")
+	private String dsImagem;
+	
+	@Column(name="DS_LINKEDIN")
+	private String dsLinkedin;
+	
+	@Column(name="DS_CARGO")
+	private String dsCargo;
+	
+	@Column(name="DS_EMPRESA")
+	private String dsEmpresa;
+	
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name="CD_PROFESSOR")
 	private List<Curso> cursos;
 	
 	
 	
+	public String getDsImagem() {
+		return dsImagem;
+	}
+	public void setDsImagem(String dsImagem) {
+		this.dsImagem = dsImagem;
+	}
+	public String getDsLinkedin() {
+		return dsLinkedin;
+	}
+	public void setDsLinkedin(String dsLinkedin) {
+		this.dsLinkedin = dsLinkedin;
+	}
+	public String getDsCargo() {
+		return dsCargo;
+	}
+	public void setDsCargo(String dsCargo) {
+		this.dsCargo = dsCargo;
+	}
+	public String getDsEmpresa() {
+		return dsEmpresa;
+	}
+	public void setDsEmpresa(String dsEmpresa) {
+		this.dsEmpresa = dsEmpresa;
+	}
 	public List<Curso> getCursos() {
 		return cursos;
 	}
