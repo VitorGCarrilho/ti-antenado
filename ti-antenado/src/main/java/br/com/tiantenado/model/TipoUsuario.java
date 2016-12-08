@@ -13,5 +13,8 @@ public enum TipoUsuario {
 		this.dsTipoUsuario = dsTipoUsuario;
 	}
 	
+	public String getDsTipoUsuario(){
+		return this.dsTipoUsuario;
+	}
 	
 }

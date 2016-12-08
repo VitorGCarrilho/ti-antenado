@@ -32,11 +32,9 @@ public class Curso {
 	
 	@Column(name="DT_CURSO")
 	private Date dtCurso;
-	
-	
-	
-	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@PrimaryKeyJoinColumn 
+		
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name="CD_PROFESSOR")
 	private Usuario professor;
 	
 	@Column(name="CD_MODULO")

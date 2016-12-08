@@ -12,6 +12,7 @@ import br.com.tiantenado.dao.CursosDao;
 import br.com.tiantenado.model.Curso;
 import br.com.tiantenado.model.Usuario;
 import br.com.tiantenado.repository.CursoRepository;
+import br.com.tiantenado.repository.UsuarioRepository;
 
 @Controller
 public class TiAntenadoController {
@@ -19,15 +20,19 @@ public class TiAntenadoController {
 	@Autowired
 	private CursoRepository cursos;
 	
+	@Autowired
+	private UsuarioRepository usuarioRepository;
+	
 	@RequestMapping("/home")
 	public String home(){
-		//Verificar porque alguns professores estão retornando nulo
-		/*List<Curso> cursosList = cursos.findAll();
-		for(Curso curso : cursosList){
-			System.out.println(curso.getNmCurso());
-			Usuario professor = curso.getProfessor();
-			System.out.println(professor.getNmUsuario());
-		}*/
+		List<Usuario> usuarios = usuarioRepository.findAll();
+		for(Usuario usuario : usuarios){
+			System.out.println(usuario.getNmUsuario());
+			List<Curso> cursos = usuario.getCursos();
+			for (Curso curso : cursos){
+				System.out.println(curso.getNmCurso());
+			}
+		}
 		
 		
 		return "index";
