@@ -47,6 +47,10 @@ public class TiAntenadoController {
 		
 		return mv;
 	}
+	@RequestMapping("/usuario")
+	public String inserirUsuario(){		
+		return "InserirUsuario";
+	}
 	@RequestMapping("/curso/{id}")
 	public ModelAndView curso(@PathVariable Long id){
 		ModelAndView mv = new ModelAndView("DetalhesCurso");
@@ -54,5 +58,7 @@ public class TiAntenadoController {
 		mv.addObject("curso", curso);
 		return mv;
 	}
+	
+	
 	
 }
