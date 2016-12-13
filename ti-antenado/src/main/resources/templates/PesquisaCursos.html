@@ -56,14 +56,14 @@
 				<table class="table table-bordered table-striped" >
 					<thead>
 						<tr>
-							<th>Data</th>
+							<th>Data Inicio</th>
 							<th>Curso</th>
 							<th>Professor</th>						
 						</tr>
 					</thead>
 					<tbody>
 						<tr th:each="curso : ${cursos}">
-							<td th:text="${curso.dtCurso}">04/03/2017</td>
+							<td th:text="${curso.dtInicio}">04/03/2017</td>
 							<td ><a th:text="${curso.nmCurso}" th:href="@{/curso/{codigo}(codigo=${curso.cdCurso})}"></a></td>
 							<td th:text="${curso.professor.nmUsuario}">Ernane Augusto</td>
 						</tr>

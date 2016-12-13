@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import br.com.tiantenado.model.Chamada;
 
-public interface ChamadaEntity extends JpaRepository<Chamada, Long>{
+public interface ChamadaRepository extends JpaRepository<Chamada, Long>{
 
 }

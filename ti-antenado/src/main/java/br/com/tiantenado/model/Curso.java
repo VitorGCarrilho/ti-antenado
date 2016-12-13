@@ -30,8 +30,8 @@ public class Curso {
 	@Column(name="DS_CURSO")
 	private String dsCurso;
 	
-	@Column(name="DT_CURSO")
-	private Date dtCurso;
+	@Column(name="DT_INICIO")
+	private Date dtInicio;
 		
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name="CD_PROFESSOR")
@@ -65,11 +65,11 @@ public class Curso {
 	public void setDsCurso(String dsCurso) {
 		this.dsCurso = dsCurso;
 	}
-	public Date getDtCurso() {
-		return dtCurso;
+	public Date getDtInicio() {
+		return dtInicio;
 	}
-	public void setDtCurso(Date dtCurso) {
-		this.dtCurso = dtCurso;
+	public void setDtInicio(Date dtCurso) {
+		this.dtInicio = dtCurso;
 	}
 	public Usuario getProfessor() {
 		return professor;
@@ -86,7 +86,7 @@ public class Curso {
 		result = prime * result + (int) (cdCurso ^ (cdCurso >>> 32));
 		result = prime * result + (int) (cdModulo ^ (cdModulo >>> 32));
 		result = prime * result + ((dsCurso == null) ? 0 : dsCurso.hashCode());
-		result = prime * result + ((dtCurso == null) ? 0 : dtCurso.hashCode());
+		result = prime * result + ((dtInicio == null) ? 0 : dtInicio.hashCode());
 		result = prime * result + ((nmCurso == null) ? 0 : nmCurso.hashCode());
 		result = prime * result + ((professor == null) ? 0 : professor.hashCode());
 		return result;
@@ -109,10 +109,10 @@ public class Curso {
 				return false;
 		} else if (!dsCurso.equals(other.dsCurso))
 			return false;
-		if (dtCurso == null) {
-			if (other.dtCurso != null)
+		if (dtInicio == null) {
+			if (other.dtInicio != null)
 				return false;
-		} else if (!dtCurso.equals(other.dtCurso))
+		} else if (!dtInicio.equals(other.dtInicio))
 			return false;
 		if (nmCurso == null) {
 			if (other.nmCurso != null)
