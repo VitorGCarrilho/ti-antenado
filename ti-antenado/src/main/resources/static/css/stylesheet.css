@@ -2,7 +2,9 @@
 
 /*
   preto: #414853
+  midnight: #2c3e50
   vermelho: #cc170a
+  vermelho-escuro: #c0392b
   amarelo: #f6ab42
   azul: #0181f9
   azul mais claro: #91b5d4
@@ -17,16 +19,31 @@
 /* ******** FONTES ******** */
 
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 
 *{
 	font-family: 'Josefin Sans', sans-serif;	
 	color: #414853;
 }
-
+h1{
+	font-family: 'Open Sans', sans-serif; 
+	font-weight: 700;
+	font-size: 30px;
+	color: #2c3e50;
+}
+h4{
+	font-family: 'Open Sans', sans-serif; 
+	font-weight: 900;
+	color: #a0b5cb;
+}
 
 /* ******** BACKGROUND ******** */
 .bg-clouds{
 	background-color: #ecf0f1;
+}
+.bg-branco{
+	background-color: #fff;
 }
 .banner{
 	background-image: url("../images/banner2.jpg");
@@ -54,13 +71,14 @@
 /* ******** FONTES ******** */
 
 .texto-cinza-azulado{
-	color: #367eab;
+	color: #367eab;	
 }
 .texto-branco{
 	color: #fff;
 }
 .texto{
 	font-size: 20px;
+	line-height: 1.6;
 }
 .texto-tabela{
 	font-size: 16px;
@@ -77,8 +95,52 @@
 .entrar{
 	margin-top: 0px;
 }
+.underline-titulo:after{
+	content: "";
+	display: block;
+	height: 2px;
+	background-color: #a0b5cb;
+	width: 200px;
+	margin: 14px auto 14px 0;  	
+}
+ul{
+	list-style: none;;
+}
+ul li span{
+	padding-right: 15px;
+	font-size: 15px;
+}
+/* ******** ESPACAMENTO ******** */
+
+.padding-top{
+	padding-top: 20px;
+}
 
 /* ******** TABELA ******** */
 .fundo-branco{
 	background-color: #fff;
+}
+
+
+/* ******** FOOTER ******** */
+footer{
+	background-color: #2c3e50;	
+}
+
+footer div div div p a{
+	color: #ecf0f1;
+	font-size: 17px;
+}
+footer div div div p a:hover{
+	color: #a0b5cb;
+}
+footer label{
+	color: #ecf0f1;
+}
+footer small{
+	color: #a0b5cb;
+	display: inline-block;
+	font-size: 14px;
+	font-family: 'Open Sans', sans-serif; 
+	float: right;
 }
