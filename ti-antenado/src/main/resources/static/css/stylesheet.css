@@ -21,20 +21,42 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
+/* ******** NAVBAR ******** */
+.margin-cursos{
+	margin-top: 40px;
+}
+.navbar-teste{
+	background-color: #fafafa;
+	padding: 15px 0 15px 0;
+	border-bottom: 3px solid #2980b9;
+	border-radius: 0;
+	width: 100%;	
+	margin-bottom: 0;
+}
+.container ul li a{
+	margin: 0px;
+	padding: 20px;
+	font-size: 16px;
+}
+.container ul li a:hover{
+	background-color: #a0b5cb;
+	color: #ecf0f1;
+}
 
+/* ******** FONTES ******** */
 *{
-	font-family: 'Josefin Sans', sans-serif;	
+	font-family: 'Josefin Sans', Caviar Dreams, sans-serif;	
 	color: #414853;
 }
 h1{
-	font-family: 'Open Sans', sans-serif; 
+	font-family: 'Open Sans', Caviar Dreams, sans-serif; 
 	font-weight: 700;
 	font-size: 30px;
 	color: #2c3e50;
 }
 h4{
 	font-family: 'Open Sans', sans-serif; 
-	font-weight: 900;
+	font-weight: 700;
 	color: #a0b5cb;
 }
 
@@ -46,8 +68,8 @@ h4{
 	background-color: #fff;
 }
 .banner{
-	background-image: url("../images/banner2.jpg");
-	height: 250px;
+	background-image: url("../images/banner-tiantenado4.png");
+	height: 345px;
 	width: 100%;
 }
 .imgPerfil{
