@@ -22,13 +22,10 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 /* ******** NAVBAR ******** */
-.margin-cursos{
-	margin-top: 40px;
-}
-.navbar-teste{
+.navbar-estilo{
 	background-color: #fafafa;
 	padding: 15px 0 15px 0;
-	border-bottom: 3px solid #2980b9;
+	border-bottom: 1px solid #a0b5cb;
 	border-radius: 0;
 	width: 100%;	
 	margin-bottom: 0;
@@ -138,10 +135,18 @@ ul li span{
 	padding-top: 20px;
 }
 
-/* ******** TABELA ******** */
-.fundo-branco{
-	background-color: #fff;
+/* ********IMAGEM ******** */
+.borda-img{
+	border: 1px solid #a0b5cb;
 }
+.container-img{
+	padding: 10px;
+}
+.container div div a.link-img:hover{
+	text-decoration: none;
+}
+
+
 
 
 /* ******** FOOTER ******** */
@@ -162,7 +167,16 @@ footer label{
 footer small{
 	color: #a0b5cb;
 	display: inline-block;
-	font-size: 14px;
+	font-size: 12px;
 	font-family: 'Open Sans', sans-serif; 
 	float: right;
+}
+footer small a:hover{
+	color: #a0b5cb;
+}
+.hr-footer{
+	content: "";
+	background-color: #a0b5cb;
+	height: 1px;
+	margin-top: 15px;
 }

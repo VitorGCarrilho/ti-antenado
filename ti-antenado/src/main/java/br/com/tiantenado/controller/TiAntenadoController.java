@@ -51,6 +51,10 @@ public class TiAntenadoController {
 	public String cursos(){		
 		return "Cursos";
 	}
+	@RequestMapping("/informacaocursos")
+	public String informacaocursos(){		
+		return "InformacaoCursos";
+	}
 	@RequestMapping("/usuario")
 	public String inserirUsuario(){		
 		return "InserirUsuario";
