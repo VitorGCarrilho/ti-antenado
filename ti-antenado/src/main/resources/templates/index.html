@@ -216,33 +216,25 @@
 
 			<div class="row">
 
-				<div class="col-lg-6 texto padding-top">
+				<div class="col-lg-12 texto padding-top">
 					<p>Projeto que apresenta e ensina aos alunos a trabalhar com as
 						ferramentas do mercado de trabalho. Não perca essa oportunidade
 						estamos com poucas vagas disponíveis. Entre em contato com
 						coordenação e faça sua inscrição.</p>
-					<br /> <a href="#" class="btn btn-danger texto-botao">Saiba
-						mais</a>
+					
 				</div>
-
-				<div class="col-lg-6 texto padding-top">
-					<div class="col-lg-6">
-						<ul>
-							<li href="#"><span class="glyphicon glyphicon-ok"></span>HTML/CSS</li>
-							<li href="#"><span class="glyphicon glyphicon-ok"></span>Bootstrap</li>
-							<li href="#"><span class="glyphicon glyphicon-ok"></span>PHP
-								CRUD</li>
-						</ul>
-					</div>
-					<div class="col-lg-6">
-						<ul>
-							<li href="#"><span class="glyphicon glyphicon-ok"></span>JAVA
-								POO</li>
-							<li href="#"><span class="glyphicon glyphicon-ok"></span>Python</li>
-							<li href="#"><span class="glyphicon glyphicon-ok"></span>Pentest</li>
-						</ul>
-					</div>
-
+				<br/>
+				<div class="col-lg-6 texto" th:each="curso : ${cursos}">
+					
+						<div class="panel panel-primary">
+								<div class="panel-heading">
+									<b th:text="${curso.dtInicio}">Data</b><i class="fa fa-flag-o pull-right"></i>
+								</div>
+								<div class="panel-body">
+									<h3 th:text="${curso.nmCurso}">Nome</h3>
+									<p><strong>Professor:</strong><i th:text="${curso.professor.nmUsuario}">Professor</i></p>									
+								</div>
+							</div>
 				</div>
 			</div>
 		</div>

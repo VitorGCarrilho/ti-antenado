@@ -15,6 +15,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="TB_CURSO")
@@ -31,6 +35,8 @@ public class Curso {
 	private String dsCurso;
 	
 	@Column(name="DT_INICIO")
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	@Temporal(TemporalType.DATE)
 	private Date dtInicio;
 		
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
