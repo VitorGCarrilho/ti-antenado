@@ -1,6 +1,5 @@
 package br.com.tiantenado.controller;
 
-import java.sql.Connection;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,8 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.com.tiantenado.config.DataBaseConfig;
-import br.com.tiantenado.dao.CursosDao;
 import br.com.tiantenado.model.Curso;
 import br.com.tiantenado.model.Usuario;
 import br.com.tiantenado.repository.CursoRepository;
@@ -37,7 +34,7 @@ public class TiAntenadoController {
 		}
 		
 		
-		return "index";
+		return "home/index";
 	}
 	@RequestMapping("/curso")
 	public ModelAndView listaCursos(){

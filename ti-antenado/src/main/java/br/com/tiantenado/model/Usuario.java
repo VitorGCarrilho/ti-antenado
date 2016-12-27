@@ -9,11 +9,12 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
-import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -21,8 +22,9 @@ import javax.persistence.Table;
 public class Usuario {
 	
 	@Id
-	@Column(name="CD_USUARIO")
-	private long cdUsuario;
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	@Column(name="CD_USUARIO", nullable=false, unique=true)
+	private Long cdUsuario;
 	
 	@Column(name="NM_USUARIO")
 	private String nmUsuario;
@@ -64,6 +66,10 @@ public class Usuario {
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name="CD_PROFESSOR")
 	private List<Curso> cursos;
+	
+	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	@JoinColumn
+	private Account account;
 	
 	
 	
@@ -109,10 +115,10 @@ public class Usuario {
 	public void setDsInstituicao(String instituicao) {
 		this.dsInstituicao = instituicao;
 	}
-	public long getCdUsuario() {
+	public Long getCdUsuario() {
 		return cdUsuario;
 	}
-	public void setCdUsuario(long cdUsuario) {
+	public void setCdUsuario(Long cdUsuario) {
 		this.cdUsuario = cdUsuario;
 	}
 	public String getNmUsuario() {
@@ -151,6 +157,16 @@ public class Usuario {
 	public void setTipoUsuario(TipoUsuario tipoUsuario) {
 		this.tipoUsuario = tipoUsuario;
 	}
+	
+	
+	
+	public Account getAccount() {
+		return account;
+	}
+	public void setAccount(Account account) {
+		this.account = account;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

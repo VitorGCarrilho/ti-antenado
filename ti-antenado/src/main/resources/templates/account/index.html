@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="default/layout">
+<head>
+<title>Getting Started: Serving Web Content</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+<body>
+	<div layout:fragment="content">
+		<!-- ownersList.html -->
+<h2>Accounts</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th style="width: 150px;">#</th>
+      <th style="width: 150px;">User</th>
+      <th style="width: 200px;">Creation Date</th>
+      <th style="width: 100px;">Last Update</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="account : ${form.content}">
+      <td>
+        <a href="ownerDetails.html"
+          th:href="@{|/owners/${account.idAccount}|}"
+          th:text="|${account.idAccount}|"></a>
+      </td>
+      <td th:text="${account.usuario.cdUsuario}"></td>
+      <td th:text="${account.creationDate}"></td>
+      <td th:text="${account.lastUpdate}"></td>
+    </tr>
+  </tbody>
+</table>
+	</div>
+</body>
+</html>
