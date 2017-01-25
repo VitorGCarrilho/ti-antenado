@@ -26,7 +26,7 @@ layout:decorator="Layout/LayoutPadrao">
 						<div class="row">
 							<div class="form-group col-md-12">
 								<input type="text" class="form-control" id="nome" name="nome"
-									placeholder="Nome completo *" />
+									placeholder="Nome completo *" th:value="${usuario.nmUsuario}"/>
 							</div>
 						</div>
 						
@@ -61,7 +61,7 @@ layout:decorator="Layout/LayoutPadrao">
 						<div class="row">
 							<div class="form-group col-md-12">
 								<input type="text" class="form-control" id="email" name="email"
-									placeholder="Seu melhor e-mail *" />
+									placeholder="Seu melhor e-mail *" th:value="${usuario.dsEmail}"/>
 							</div>
 						</div>
 						

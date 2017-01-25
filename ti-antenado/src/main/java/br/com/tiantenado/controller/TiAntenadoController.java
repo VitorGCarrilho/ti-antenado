@@ -24,31 +24,17 @@ public class TiAntenadoController {
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 	
+	@RequestMapping("/")
+	public String home1 (){
+		return "redirect:/home";
+	}
+	
 	@RequestMapping("/home")
 	public ModelAndView home(){
 		ModelAndView mv = new ModelAndView("index");
 		List<Curso> cursos = cursoService.getAllInCurrentModule();		
 		mv.addObject("cursos", cursos);
+		mv.addObject("usuario",new Usuario());
 		return mv;
 	}
-
-	
-	@RequestMapping("/informacaocursos")
-	public String informacaocursos(){		
-		return "InformacaoCursos";
-	}
-	@RequestMapping("/usuario")
-	public String inserirUsuario(){		
-		return "InserirUsuario";
-	}
-	@RequestMapping("/curso/{id}")
-	public ModelAndView curso(@PathVariable Long id){
-		ModelAndView mv = new ModelAndView("DetalhesCurso");
-		//Curso curso = cursosRepository.findOne(id);
-		//mv.addObject("curso", curso);
-		return mv;
-	}
-	
-	
-	
 }
