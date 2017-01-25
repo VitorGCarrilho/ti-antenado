@@ -1,52 +1,12 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<head>
-<meta charset="UTF-8" />
-<title>TI Antenado 2017</title>
-<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/stylesheet.css" />
-
-</head>
-
-<div class="cotainer"></div>
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="Layout/LayoutPadrao">
 
 <body class="bg-clouds">
-
-
-	<!-- <nav class="navbar navbar-inverse navbar-fixed-top navbar-teste"> -->
-	<nav class="navbar navbar-estilo">
-		<div class="container-fluid">
-			<!--  <div class="navbar-header">
-				<a class="navbar-brand" href="#">WebSiteName</a>
-			</div> -->
-			<div class="container">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="/home">Início</a></li>
-					<!--  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-				        <ul class="dropdown-menu">
-				          <li><a href="#">Page 1-1</a></li>
-				          <li><a href="#">Page 1-2</a></li>
-				          <li><a href="#">Page 1-3</a></li>
-				        </ul>
-				    </li>  -->
-					<li><a href="/cursos">Cursos</a></li>
-					<li><a href="#">Sobre</a></li>
-					<li><a href="#">Contato</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#" class="texto-botao" data-toggle="modal"
-						data-target="#myModal">Acessar minha conta</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-
-	<!-- <div class="banner"></div> -->
-
-
+<serction layout:fragment="conteudo"> 
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
@@ -93,18 +53,18 @@
 
 		<!-- Left and right controls -->
 		<a class="left carousel-control" href="#myCarousel" role="button"
-			data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"
-			aria-hidden="true"></span> <span class="sr-only">Previous</span>
-		</a> <a class="right carousel-control" href="#myCarousel" role="button"
-			data-slide="next"> <span
-			class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-			<span class="sr-only">Next</span>
-		</a>
-	</div>
+		data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"
+		aria-hidden="true"></span> <span class="sr-only">Previous</span>
+	</a> <a class="right carousel-control" href="#myCarousel" role="button"
+	data-slide="next"> <span
+	class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	<span class="sr-only">Next</span>
+</a>
+</div>
 
 
 	<!-- <img src="../images/banner-tiantenado5.png" class="img-responsive"
-		alt="TI Antenado" /> -->
+	alt="TI Antenado" /> -->
 
 	<!-- INICIO CONTAINER 1 -->
 	<div class="container">
@@ -116,44 +76,44 @@
 					TI Antenado 2017</h1>
 
 
-				<p class="texto padding-top">
-					O curso de Ciência da Computação da UNISAL de Lorena oferece <strong>gratuitamente</strong>
-					o programa de extensão <strong>Profissional TI Antenado.</strong>
-					Em sua quinta edição, o projeto tem por objetivo fornecer rápida
-					capacitação profissional aos alunos por meio de cursos rápidos
-					voltados à area de tecnologia da informação, provendo aos alunos
-					capacidade de trabalhar com as ferramentas atuais do mercado de
-					trabalho.
-				</p>
-				<br /> <a href="#" class="btn btn-danger texto-botao">Saiba
+					<p class="texto padding-top">
+						O curso de Ciência da Computação da UNISAL de Lorena oferece <strong>gratuitamente</strong>
+						o programa de extensão <strong>Profissional TI Antenado.</strong>
+						Em sua quinta edição, o projeto tem por objetivo fornecer rápida
+						capacitação profissional aos alunos por meio de cursos rápidos
+						voltados à area de tecnologia da informação, provendo aos alunos
+						capacidade de trabalhar com as ferramentas atuais do mercado de
+						trabalho.
+					</p>
+					<br /> <a href="#" class="btn btn-danger texto-botao">Saiba
 					mais</a> <br /> <br /> <br />
 
-			</div>
+				</div>
 
 
-			<div class="col-lg-6">
-				<div class="col-md-offset-3">
-					<div>
-						<h1 class="padding-top underline-titulo">Inscreva-se</h1>
-					</div>
+				<div class="col-lg-6">
+					<div class="col-md-offset-3">
+						<div>
+							<h1 class="padding-top underline-titulo">Inscreva-se</h1>
+						</div>
 
 
-					<form class="padding-top">
-						<div class="row">
-							<div class="form-group col-md-12">
-								<label for="nome">Nome:</label> <input type="text"
+						<form class="padding-top">
+							<div class="row">
+								<div class="form-group col-md-12">
+									<label for="nome">Nome:</label> <input type="text"
 									class="form-control" id="nome" name="nome"
 									placeholder="Nome completo *" />
+								</div>
 							</div>
-						</div>
 
-						<div class="row">
-							<div class="form-group col-md-12">
-								<label for="email">E-mail:</label> <input type="text"
+							<div class="row">
+								<div class="form-group col-md-12">
+									<label for="email">E-mail:</label> <input type="text"
 									class="form-control" id="email" name="email"
 									placeholder="Seu melhor e-mail *" />
+								</div>
 							</div>
-						</div>
 
 						<!-- 
 
@@ -185,32 +145,32 @@
 							
 						</div>
 						
-						-->
-						<br /> <a href="/usuario" class="btn btn-danger texto-botao">Seguinte
-							>></a> <br /> <br /> <br /> <br />
-					</form>
+					-->
+					<br /> <a href="/usuario" class="btn btn-danger texto-botao">Seguinte
+					>></a> <br /> <br /> <br /> <br />
+				</form>
 
-				</div>
 			</div>
-
-
-
 		</div>
-		<!-- FIM CONTEUDO 1 -->
+
+
+
 	</div>
-	<!-- FIM CONTAINER 1 -->
+	<!-- FIM CONTEUDO 1 -->
+</div>
+<!-- FIM CONTAINER 1 -->
 
 
-	<!-- INICIO CONTEUDO 2 -->
-	<div class="row bg-branco">
+<!-- INICIO CONTEUDO 2 -->
+<div class="row bg-branco">
 
-		<!-- INICIO CONTAINER 2 -->
-		<div class="container">
+	<!-- INICIO CONTAINER 2 -->
+	<div class="container">
 
-			<div class="row">
-				<div class="col-lg-12">
-					<h1 class="underline-titulo padding-top">Confira os cursos
-						deste semestre</h1>
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="underline-titulo padding-top">Confira os cursos
+					deste semestre</h1>
 				</div>
 			</div>
 
@@ -221,133 +181,30 @@
 						ferramentas do mercado de trabalho. Não perca essa oportunidade
 						estamos com poucas vagas disponíveis. Entre em contato com
 						coordenação e faça sua inscrição.</p>
-					
-				</div>
-				<br/>
-				<div class="col-lg-6 texto" th:each="curso : ${cursos}">
-					
+						
+					</div>
+					<br/>
+					<div class="col-lg-6 texto" th:each="curso : ${cursos}">
+						
 						<div class="panel panel-primary">
-								<div class="panel-heading">
-									<b th:text="${curso.dtInicio}">Data</b><i class="fa fa-flag-o pull-right"></i>
-								</div>
-								<div class="panel-body">
-									<h3 th:text="${curso.nmCurso}">Nome</h3>
-									<p><strong>Professor:</strong><i th:text="${curso.professor.nmUsuario}">Professor</i></p>									
-								</div>
+							<div class="panel-heading">
+								<b th:text="${curso.dtInicio}">Data</b><i class="fa fa-flag-o pull-right"></i>
 							</div>
-				</div>
-			</div>
-		</div>
-		<!-- FIM CONTAINER 2 -->
-		<br /> <br />
-	</div>
-	<!-- FIM CONTEUDO 2 -->
-
-
-	<footer class="padding-top">
-		<div class="container">
-			<div class="row">
-
-				<div class="col-lg-4">
-					<h4>Projeto Profissional TI Antenado 2017</h4>
-					<p class="padding-top">
-						<a href="#">Início</a>
-					</p>
-					<p>
-						<a href="#">Cursos</a>
-					</p>
-					<p>
-						<a href="#">Sobre</a>
-					</p>
-					<p>
-						<a href="#">Contato</a>
-					</p>
-				</div>
-
-				<div class="col-lg-4">
-					<h4>Institucional</h4>
-					<p class="padding-top">
-						<a href="#">Conheça a UNISAL</a>
-					</p>
-					<p>
-						<a href="#">Projetos anterios</a>
-					</p>
-					<p>
-						<a href="#">Perguntas frequentes</a>
-					</p>
-				</div>
-
-				<div class="col-lg-4">
-					<h4>Fique informado do início de novas turmas</h4>
-					<form class="padding-top">
-						<div class="row">
-							<div class="form-group col-lg-12">
-								<label for="contato">E-mail:</label> <input type="text"
-									class="form-control" id="contato" name="contato"
-									placeholder="Seu melhor e-mail*" /> <br />
-								<button type="button" class="btn btn-danger texto-botao">Cadastrar</button>
-								<br />
+							<div class="panel-body">
+								<h3 th:text="${curso.nmCurso}">Nome</h3>
+								<p><strong>Professor:</strong><i th:text="${curso.professor.nmUsuario}">Professor</i></p>									
 							</div>
-
-						</div>
-					</form>
-				</div>
-
-
-			</div>
-			<div class="hr-footer">
-				<small class="padding-top">Desenvolvido por <strong><a href="#">Desenvolvedores Unisal</a></strong>
-				</small>
-			</div>
-		</div>
-	</footer>
-
-
-
-	<div id="myModal" class="modal fade" role="dialog">
-		<div class="modal-dialog">
-
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">
-						Faça <em>login</em> para acessar o sistema
-					</h4>
-				</div>
-				<div class="modal-body col-md-offset-2">
-					<div class="row">
-						<div class="form-group col-md-8">
-							<input type="text" class="form-control" id="name" name="name"
-								placeholder="E-mail" />
 						</div>
 					</div>
-
-					<div class="row">
-						<div class="form-group col-md-8">
-							<input type="text" class="form-control" id="email" name="email"
-								placeholder="Senha" />
-						</div>
-					</div>
-					<a href="#">Esqueci minha senha</a>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-					<a href="#" class="btn btn-danger">Entrar</a>
 				</div>
 			</div>
-
+			<!-- FIM CONTAINER 2 -->
+			<br /> <br />
 		</div>
-	</div>
+		<!-- FIM CONTEUDO 2 -->
 
-
-
-
-
-
-
-	<script type="text/javascript" src="/js/jquery.js"></script>
-	<script type="text/javascript" src="/js/jquery.min.js"></script>
-	<script type="text/javascript" src="/js/bootstrap.js"></script>
-</body>
-</html>
+		
+		
+	</serction>
+	</body>
+	</html>

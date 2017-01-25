@@ -1,50 +1,11 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<head>
-<meta charset="UTF-8" />
-<title>TI Antenado 2017</title>
-<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/stylesheet.css" />
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="Layout/LayoutPadrao">
 
-</head>
-
-<div class="cotainer"></div>
-
-<!-- <body class="bg-clouds"> -->
-<body>
-
-
-	<nav class="navbar navbar-estilo">
-		<div class="container-fluid">
-			<!--  <div class="navbar-header">
-				<a class="navbar-brand" href="#">WebSiteName</a>
-			</div> -->
-			<div class="container">
-				<ul class="nav navbar-nav">
-					<li><a href="/home">Início</a></li>
-					<!--  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-				        <ul class="dropdown-menu">
-				          <li><a href="#">Page 1-1</a></li>
-				          <li><a href="#">Page 1-2</a></li>
-				          <li><a href="#">Page 1-3</a></li>
-				        </ul>
-				    </li>  -->
-					<li class="active"><a href="/cursos">Cursos</a></li>
-					<li><a href="#">Sobre</a></li>
-					<li><a href="#">Contato</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#" class="texto-botao" data-toggle="modal"
-						data-target="#myModal">Acessar minha conta</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-
-	<!-- <div class="banner"></div> -->
+<serction layout:fragment="conteudo"> 
 
 	<!-- INICIO CONTAINER 1 -->
 	<div class="bg-branco">
@@ -125,106 +86,5 @@
 		<br /> <br />
 	</div>
 	<!-- FIM CONTEUDO 2 -->
-
-
-	<footer class="padding-top">
-		<div class="container">
-			<div class="row">
-
-				<div class="col-lg-4">
-					<h4>Projeto Profissional TI Antenado 2017</h4>
-					<p class="padding-top">
-						<a href="#">Início</a>
-					</p>
-					<p>
-						<a href="#">Cursos</a>
-					</p>
-					<p>
-						<a href="#">Sobre</a>
-					</p>
-					<p>
-						<a href="#">Contato</a>
-					</p>
-				</div>
-
-				<div class="col-lg-4">
-					<h4>Institucional</h4>
-					<p class="padding-top">
-						<a href="#">Conheça a UNISAL</a>
-					</p>
-					<p>
-						<a href="#">Projetos anterios</a>
-					</p>
-					<p>
-						<a href="#">Perguntas frequentes</a>
-					</p>
-				</div>
-
-				<div class="col-lg-4">
-					<h4>Fique informado do início de novas turmas</h4>
-					<form class="padding-top">
-						<div class="row">
-							<div class="form-group col-lg-12">
-								<label for="contato">E-mail:</label> <input type="text"
-									class="form-control" id="contato" name="contato"
-									placeholder="Seu melhor e-mail*" /> <small class="padding-top">Desenvolvido
-									por <strong><a href="#">Equipe</a>a></strong>
-								</small>
-							</div>
-
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</footer>
-
-
-
-	<div id="myModal" class="modal fade" role="dialog">
-		<div class="modal-dialog">
-
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">
-						Faça <em>login</em> para acessar o sistema
-					</h4>
-				</div>
-				<div class="modal-body col-md-offset-2">
-					<div class="row">
-						<div class="form-group col-md-8">
-							<input type="text" class="form-control" id="name" name="name"
-								placeholder="E-mail" />
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="form-group col-md-8">
-							<input type="text" class="form-control" id="email" name="email"
-								placeholder="Senha" />
-						</div>
-					</div>
-					<a href="#">Esqueci minha senha</a>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-					<a href="#" class="btn btn-danger">Entrar</a>
-				</div>
-			</div>
-
-		</div>
-	</div>
-
-
-
-
-
-
-
-	<script type="text/javascript" src="/js/jquery.js"></script>
-	<script type="text/javascript" src="/js/jquery.min.js"></script>
-	<script type="text/javascript" src="/js/bootstrap.js"></script>
-</body>
+</serction>
 </html>
