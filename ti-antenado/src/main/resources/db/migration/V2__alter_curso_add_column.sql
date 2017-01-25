@@ -1,0 +1,1 @@
+alter table tb_curso add column DS_IMAGEM VARCHAR(500);

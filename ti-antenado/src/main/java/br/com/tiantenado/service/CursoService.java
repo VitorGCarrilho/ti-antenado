@@ -1,4 +1,4 @@
-package br.com.tiantenado.dao;
+package br.com.tiantenado.service;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import br.com.tiantenado.repository.CursoRepository;
 import br.com.tiantenado.repository.UsuarioRepository;
 
 @Service
-public class CursoDao {
+public class CursoService {
 	@Autowired
 	CursoRepository cursoRepository;
 	

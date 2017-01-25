@@ -39,12 +39,15 @@ public class Curso {
 	@Temporal(TemporalType.DATE)
 	private Date dtInicio;
 		
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="CD_PROFESSOR")
 	private Usuario professor;
 	
 	@Column(name="CD_MODULO")
 	private long cdModulo;
+	
+	@Column(name="DS_IMAGEM")
+	private String dsImagem;
 	
 	
 	public long getCdModulo() {
@@ -84,6 +87,13 @@ public class Curso {
 		this.professor = professor;
 	}
 	
+	
+	public String getDsImagem() {
+		return dsImagem;
+	}
+	public void setDsImagem(String dsImagem) {
+		this.dsImagem = dsImagem;
+	}
 	
 	@Override
 	public int hashCode() {

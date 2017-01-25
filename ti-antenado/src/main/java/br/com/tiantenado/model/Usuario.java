@@ -61,7 +61,7 @@ public class Usuario {
 	@Column(name="DS_EMPRESA")
 	private String dsEmpresa;
 	
-	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name="CD_PROFESSOR")
 	private List<Curso> cursos;
 	

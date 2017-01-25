@@ -9,17 +9,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.com.tiantenado.dao.CursoDao;
 import br.com.tiantenado.model.Curso;
 import br.com.tiantenado.model.Usuario;
 import br.com.tiantenado.repository.CursoRepository;
 import br.com.tiantenado.repository.UsuarioRepository;
+import br.com.tiantenado.service.CursoService;
 
 @Controller
 public class TiAntenadoController {
 
 	@Autowired
-	private CursoDao cursoDao;
+	private CursoService cursoService;
 	
 	@Autowired
 	private UsuarioRepository usuarioRepository;
@@ -27,22 +27,12 @@ public class TiAntenadoController {
 	@RequestMapping("/home")
 	public ModelAndView home(){
 		ModelAndView mv = new ModelAndView("index");
-		List<Curso> cursos = cursoDao.getAllInCurrentModule();		
+		List<Curso> cursos = cursoService.getAllInCurrentModule();		
 		mv.addObject("cursos", cursos);
 		return mv;
 	}
-	@RequestMapping("/curso")
-	public ModelAndView listaCursos(){
-		ModelAndView mv = new ModelAndView("PesquisaCursos");
-		//List<Curso> cursos = cursosRepository.findAll();
-		//mv.addObject("cursos",cursos);
-		
-		return mv;
-	}
-	@RequestMapping("/cursos")
-	public String cursos(){		
-		return "Cursos";
-	}
+
+	
 	@RequestMapping("/informacaocursos")
 	public String informacaocursos(){		
 		return "InformacaoCursos";

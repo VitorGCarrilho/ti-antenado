@@ -101,107 +101,21 @@
 			</div>
 
 			<div class="row">
-				<div class="col-lg-4 texto padding-top">
+				<div class="col-lg-4 texto padding-top" th:each="curso : ${cursos}">
 					<a href="/informacaocursos" class="link-img">
 						<div class="media borda-img container-img">
-							<img src="../images/curso1.png"
+							<img th:src="${curso.dsImagem}"
 								class="media-object img-responsive" />
 							<div class="media-body">
-								<h4 class="media-heading text-center padding-top">Introdução
-									ao HTML5 / CSS3</h4>
+								<h4 class="media-heading text-center padding-top" th:text="${curso.nmCurso}">nome</h4>
 								<hr />
-								<p class="text-center">
-									Introdução aos recursos básicos das linguagens <strong>HTML5/CSS3</strong>,
-									criação de conteúdo e estilização de páginas.									
+								<p class="text-center" th:text="${curso.dsCurso}">								
 								</p>
 							</div>
 						</div>
 					</a>
 				</div>
-				<div class="col-lg-4 texto padding-top">
-					<a href="#" class="link-img">
-						<div class="media borda-img container-img">
-							<img src="../images/curso2.png"
-								class="media-object img-responsive" />
-							<div class="media-body">
-								<h4 class="media-heading text-center padding-top">Framework Bootstrap</h4>
-								<hr />
-								<p class="text-center">
-									Introdução aos recursos básicos das linguagens <strong>HTML5/CSS3</strong>,
-									criação de conteúdo e estilização de páginas.									
-								</p>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-lg-4 texto padding-top">
-					<a href="#" class="link-img">
-						<div class="media borda-img container-img">
-							<img src="../images/curso3.png"
-								class="media-object img-responsive" />
-							<div class="media-body">
-								<h4 class="media-heading text-center padding-top">PHP CRUD</h4>
-								<hr />
-								<p class="text-center">
-									Introdução aos recursos básicos das linguagens <strong>HTML5/CSS3</strong>,
-									criação de conteúdo e estilização de páginas.									
-								</p>
-							</div>
-						</div>
-					</a>
-				</div>
-			</div>
-			
-			<div class="row">
-
-				<div class="col-lg-4 texto padding-top">
-					<a href="#" class="link-img">
-						<div class="media borda-img container-img">
-							<img src="../images/curso4.png"
-								class="media-object img-responsive" />
-							<div class="media-body">
-								<h4 class="media-heading text-center padding-top">Python</h4>
-								<hr />
-								<p class="text-center">
-									Introdução aos recursos básicos das linguagens <strong>HTML5/CSS3</strong>,
-									criação de conteúdo e estilização de páginas.									
-								</p>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-lg-4 texto padding-top">
-					<a href="#" class="link-img">
-						<div class="media borda-img container-img">
-							<img src="../images/curso5.png"
-								class="media-object img-responsive" />
-							<div class="media-body">
-								<h4 class="media-heading text-center padding-top">Java POO</h4>
-								<hr />
-								<p class="text-center">
-									Introdução aos recursos básicos das linguagens <strong>HTML5/CSS3</strong>,
-									criação de conteúdo e estilização de páginas.									
-								</p>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-lg-4 texto padding-top">
-					<a href="#" class="link-img">
-						<div class="media borda-img container-img">
-							<img src="../images/curso6.png"
-								class="media-object img-responsive" />
-							<div class="media-body">
-								<h4 class="media-heading text-center padding-top">Pentest</h4>
-								<hr />
-								<p class="text-center">
-									Introdução aos recursos básicos das linguagens <strong>HTML5/CSS3</strong>,
-									criação de conteúdo e estilização de páginas.									
-								</p>
-							</div>
-						</div>
-					</a>
-				</div>
+				
 			</div>
 
 
