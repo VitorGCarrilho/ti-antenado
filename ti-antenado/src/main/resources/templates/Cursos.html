@@ -102,7 +102,7 @@
 
 			<div class="row">
 				<div class="col-lg-4 texto padding-top" th:each="curso : ${cursos}">
-					<a href="/informacaocursos" class="link-img">
+					<a th:href="@{/cursos/{codigo}(codigo=${curso.cdCurso})}" class="link-img">
 						<div class="media borda-img container-img">
 							<img th:src="${curso.dsImagem}"
 								class="media-object img-responsive" />

@@ -65,6 +65,11 @@ public class Usuario {
 	@JoinColumn(name="CD_PROFESSOR")
 	private List<Curso> cursos;
 	
+	@Column(name="DS_FORMACAO")
+	private String dsFormacao;
+	
+	@Column(name="DS_FACEBOOK")
+	private String dsFacebook;
 	
 	
 	public String getDsImagem() {
@@ -150,6 +155,18 @@ public class Usuario {
 	}
 	public void setTipoUsuario(TipoUsuario tipoUsuario) {
 		this.tipoUsuario = tipoUsuario;
+	}	
+	public String getDsFormacao() {
+		return dsFormacao;
+	}
+	public void setDsFormacao(String dsFormacao) {
+		this.dsFormacao = dsFormacao;
+	}
+	public String getDsFacebook() {
+		return dsFacebook;
+	}
+	public void setDsFacebook(String dsFacebook) {
+		this.dsFacebook = dsFacebook;
 	}
 	@Override
 	public int hashCode() {

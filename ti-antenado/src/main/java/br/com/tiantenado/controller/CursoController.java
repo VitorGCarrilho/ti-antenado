@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -25,12 +26,19 @@ public class CursoController {
 		return mv;
 	}
 	
-	@RequestMapping("/curso")
-	public ModelAndView listaCursos(){
-		ModelAndView mv = new ModelAndView("PesquisaCursos");
-		List<Curso> cursos = cursoService.getAllInCurrentModule();
-		mv.addObject("cursos",cursos);
-		
+	@RequestMapping("/{id}")
+	public ModelAndView curso(@PathVariable Long id){
+		ModelAndView mv = new ModelAndView("DetalhesCurso");
+		Curso curso = cursoService.findById(id);
+		mv.addObject("curso", curso);
+		return mv;
+	}
+	
+	@RequestMapping("/teste")
+	public ModelAndView teste(){
+		ModelAndView mv = new ModelAndView("Layout/LayoutPadrao");
+		Curso curso = cursoService.findById(1);
+		mv.addObject("curso", curso);
 		return mv;
 	}
 

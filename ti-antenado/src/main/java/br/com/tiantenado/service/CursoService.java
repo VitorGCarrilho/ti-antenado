@@ -17,4 +17,8 @@ public class CursoService {
 	public List<Curso> getAllInCurrentModule(){
 		return cursoRepository.findAllInCurrentModule();
 	}
+	
+	public Curso findById(long id){
+		return cursoRepository.findOne(id);
+	}
 }

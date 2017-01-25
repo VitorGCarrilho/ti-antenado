@@ -13,17 +13,18 @@
 
 <div class="cotainer"></div>
 
+<!-- <body class="bg-clouds"> -->
 <body>
 
-	<!-- INICIO CONTAINER -->
-	<nav class="navbar navbar-inverse navbar-fixed-top">
+
+	<nav class="navbar navbar-estilo">
 		<div class="container-fluid">
 			<!--  <div class="navbar-header">
 				<a class="navbar-brand" href="#">WebSiteName</a>
 			</div> -->
 			<div class="container">
 				<ul class="nav navbar-nav">
-					<li><a href="/home">Home</a></li>
+					<li><a href="/home">Início</a></li>
 					<!--  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
 				        <ul class="dropdown-menu">
 				          <li><a href="#">Page 1-1</a></li>
@@ -31,8 +32,8 @@
 				          <li><a href="#">Page 1-3</a></li>
 				        </ul>
 				    </li>  -->
-					<li class="active"><a href="/curso">Cursos</a></li>
-					<li><a href="#">Desenvolvedores</a></li>
+					<li class="active"><a href="/cursos">Cursos</a></li>
+					<li><a href="#">Sobre</a></li>
 					<li><a href="#">Contato</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
@@ -43,80 +44,135 @@
 		</div>
 	</nav>
 
+	<!-- <div class="banner"></div> -->
 
+	<!-- INICIO CONTAINER 1 -->
+	<div class="bg-branco">
+		<div class="container padding-top">
+			<!-- INICIO CONTEUDO 1 -->
+			<div class="row">
+				<div class="col-lg-6">
 
-	<div class="container" style="padding-top: 50pt;">
-
-
-		<!-- INICIO CONTEUDO -->
-		<div class="row" >
-			<div class="col-lg-12">
-				<h1 th:text="${curso.nmCurso}">Confira nossos cursos</h1>
-			</div>
-			<div class="col-lg-12">
-				<hr/>
-			</div>
-			<div class ="row">
-				<div class="col-lg-3 imgPerfil" th:style="'background-image: url(' + ${curso.professor.dsImagem} + ');'">
+					<div class="underline-titulo">
+						<h1 th:text="${curso.nmCurso}">
+						HTML5 / CSS3<br /></h1>
+						<p th:text="${curso.dtInicio}"><date>01/03/2017</date></p>
+					</div>
 					
+
+					<p class="texto padding-top" th:text="${curso.dsCurso}">
+						O curso de Ciência da Computação da UNISAL de Lorena oferece <strong>gratuitamente</strong>
+						o programa de extensão <strong>Profissional TI Antenado.</strong>
+						Em sua quinta edição, o projeto tem por objetivo fornecer rápida
+						capacitação profissional aos alunos por meio de cursos rápidos
+						voltados à area de tecnologia da informação, provendo aos alunos
+						capacidade de trabalhar com as ferramentas atuais do mercado de
+						trabalho.
+					</p>
 				</div>
-				
-				<div class="col-lg-9 detalhePerfilProfessor">
-					<div class="row detalhePerfilProfessor">				
-						<div class="col-lg-4" style="padding-left: 40pt;">
-							<p>Professor: </p> <a th:text="${curso.professor.nmUsuario}"></a>
+				<div class="col-lg-5 padding-top">
+
+					<div class="col-lg-12">
+						<div class="media">
+							<div class="media-left">
+								<img th:src="${curso.professor.dsImagem}" class="media-object"
+									style="width: 100px" />
+							</div>
+							<div class="media-body">
+								<h4><strong>Professor:
+									</strong></h4>
+								<h4 class="media-heading" th:text="${curso.professor.nmUsuario}"></h4>
+								<br/>
+								
+								<p>
+									<i class="glyphicon glyphicon-education"></i> <strong>Formação:
+									</strong><i th:text="${curso.professor.dsFormacao}"></i>
+								</p>
+
+								<p>
+									<i class="glyphicon glyphicon-thumbs-up"></i> <strong>Facebook:
+									</strong><i th:text="${curso.professor.dsFacebook}"></i>
+								</p>
+								<p>
+									<i class="glyphicon glyphicon-envelope"></i> <strong>E-mail:
+									</strong><i th:text="${curso.professor.dsEmail}"></i>
+								</p>
+								<p>
+									<i class="glyphicon glyphicon-info-sign"></i> <strong>Linkedin:
+									</strong><i th:text="${curso.professor.dsLinkedin}"></i>
+								</p>
+							</div>
 						</div>
-						<div class="col-lg-4" style="padding-left: 40pt;">
-							<p>E-Mail: </p> <a th:text="${curso.professor.dsEmail}"></a>
-						</div>
-						<div class="col-lg-4" style="padding-left: 40pt;">
-							<p>Linkedin: </p> <a th:text="${curso.professor.nmUsuario}" th:href="${curso.professor.dsLinkedin}" target="_blank"></a>
-						</div>
-					</div>
-					<div class="row detalhePerfilProfessor">
-						<div class="col-lg-4" style="padding-left: 40pt;">
-							<p>Instituição: </p> <p th:text="${curso.professor.dsInstituicao}"></p>
-						</div>
-						<div class="col-lg-4" style="padding-left: 40pt;">
-							<p>Empresa: </p> <a th:text="${curso.professor.dsEmpresa}"></a>
-						</div>
-						<div class="col-lg-4" style="padding-left: 40pt;">
-							<p>Cargo: </p> <a th:text="${curso.professor.dsCargo}"></a>
-						</div>
-					</div>
-				</div>			
-			</div>
-			<div class="col-lg-12">
-				<hr/>
-			</div>
-			<div class="col-lg-12 detalheCurso">
-				<div class="row detalhePerfilProfessor">				
-					<div class="col-lg-3" style="padding-left: 40pt;">
-						<p>Curso: </p> <p th:text="${curso.nmCurso}"></p>
-					</div>
-					<div class="col-lg-3" style="padding-left: 40pt;">
-						<p>Descrição: </p> <p th:text="${curso.dsCurso}"></p>
-					</div>
-					<div class="col-lg-3" style="padding-left: 40pt;">
-						<p>Data de Inicio: </p> <a th:text="${curso.dtInicio}"></a>
-					</div>
-					<div class="col-lg-3" style="padding-left: 40pt;">
-						<p>Modulo: </p> <a th:text="${curso.cdModulo}"></a>
 					</div>
 				</div>
-				
-				
 			</div>
-			
-			
+			<!-- FIM CONTEUDO 1 -->
 		</div>
-
-		<!-- FIM CONTEUDO -->
-
-
-
 	</div>
-	<!-- FIM CONTAINER -->
+	<!-- FIM CONTAINER 1 -->
+	<br/>
+
+
+	
+
+
+	<footer class="padding-top">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-lg-4">
+					<h4>Projeto Profissional TI Antenado 2017</h4>
+					<p class="padding-top">
+						<a href="#">Início</a>
+					</p>
+					<p>
+						<a href="#">Cursos</a>
+					</p>
+					<p>
+						<a href="#">Sobre</a>
+					</p>
+					<p>
+						<a href="#">Contato</a>
+					</p>
+				</div>
+
+				<div class="col-lg-4">
+					<h4>Institucional</h4>
+					<p class="padding-top">
+						<a href="#">Conheça a UNISAL</a>
+					</p>
+					<p>
+						<a href="#">Projetos anterios</a>
+					</p>
+					<p>
+						<a href="#">Perguntas frequentes</a>
+					</p>
+				</div>
+
+				<div class="col-lg-4">
+					<h4>Fique informado do início de novas turmas</h4>
+					<form class="padding-top">
+						<div class="row">
+							<div class="form-group col-lg-12">
+								<label for="contato">E-mail:</label> <input type="text"
+									class="form-control" id="contato" name="contato"
+									placeholder="Seu melhor e-mail*" /> <br />
+								<button type="button" class="btn btn-danger texto-botao">Cadastrar</button>
+								<br />
+							</div>
+
+						</div>
+					</form>
+				</div>
+
+
+			</div>
+			<div class="hr-footer">
+				<small class="padding-top">Desenvolvido por <strong><a href="#">Desenvolvedores Unisal</a></strong>
+				</small>
+			</div>
+		</div>
+	</footer>
 
 
 
@@ -149,7 +205,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-					<a href="#" class="btn btn-primary">Entrar</a>
+					<a href="#" class="btn btn-danger">Entrar</a>
 				</div>
 			</div>
 
