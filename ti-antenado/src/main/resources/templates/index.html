@@ -150,21 +150,19 @@
 
 				</div>
 				<br />
-				<div class="col-lg-6 texto" th:each="curso : ${cursos}">
-
-					<div class="panel panel-primary">
-						<div class="panel-heading">
-							<b th:text="${curso.dtInicio}">Data</b><i
-								class="fa fa-flag-o pull-right"></i>
+				<div class="col-lg-4 texto padding-top" th:each="curso : ${cursos}">
+					<a th:href="@{/cursos/{codigo}(codigo=${curso.cdCurso})}" class="link-img">
+						<div class="media borda-img container-img">
+							<img th:src="${curso.dsImagem}"
+								class="media-object img-responsive" />
+							<div class="media-body">
+								<h4 class="media-heading text-center padding-top" th:text="${curso.nmCurso}">nome</h4>
+								<hr />
+								<p class="text-center" th:text="${curso.dsCurso}">								
+								</p>
+							</div>
 						</div>
-						<div class="panel-body">
-							<h3 th:text="${curso.nmCurso}">Nome</h3>
-							<p>
-								<strong>Professor:</strong><i
-									th:text="${curso.professor.nmUsuario}">Professor</i>
-							</p>
-						</div>
-					</div>
+					</a>
 				</div>
 			</div>
 		</div>
