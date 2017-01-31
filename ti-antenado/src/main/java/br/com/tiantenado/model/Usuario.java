@@ -60,8 +60,9 @@ public class Usuario {
 	@Column(name="DS_EMPRESA")
 	private String dsEmpresa;
 	
-	@OneToMany(fetch = FetchType.LAZY)
+	@OneToMany
 	@JoinColumn(name="CD_PROFESSOR")
+	@JsonIgnore
 	private List<Curso> cursos;
 	
 	@Column(name="DS_FORMACAO")

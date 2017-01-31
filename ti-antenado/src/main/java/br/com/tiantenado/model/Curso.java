@@ -41,9 +41,8 @@ public class Curso {
 	@Temporal(TemporalType.DATE)
 	private Date dtInicio;
 		
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name="CD_PROFESSOR")
-	@JsonIgnore
 	private Usuario professor;
 	
 	@Column(name="CD_MODULO")
