@@ -21,4 +21,8 @@ public class CursoService {
 	public Curso findById(long id){
 		return cursoRepository.findOne(id);
 	}
+	
+	public void save(Curso curso){
+		cursoRepository.save(curso);
+	}
 }

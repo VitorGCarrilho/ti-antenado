@@ -20,6 +20,8 @@ import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="TB_CURSO")
 public class Curso {
@@ -41,6 +43,7 @@ public class Curso {
 		
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="CD_PROFESSOR")
+	@JsonIgnore
 	private Usuario professor;
 	
 	@Column(name="CD_MODULO")
