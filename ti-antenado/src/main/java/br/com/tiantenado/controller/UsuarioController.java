@@ -16,7 +16,7 @@ public class UsuarioController {
 	
 	@RequestMapping(value="/cadastro", method= RequestMethod.POST)
 	public ModelAndView inserirUsuario(@ModelAttribute("usuario") Usuario usuario){	
-		ModelAndView mv = new ModelAndView("InserirUsuario");
+		ModelAndView mv = new ModelAndView("Usuario/InserirUsuario");
 		mv.addObject("usuario",usuario);
 		return mv;
 	}
@@ -24,7 +24,7 @@ public class UsuarioController {
 	@RequestMapping("/cadastro")
 	public ModelAndView inserirUsuario(){		
 		Usuario usuario = new Usuario();
-		ModelAndView mv = new ModelAndView("InserirUsuario");
+		ModelAndView mv = new ModelAndView("Usuario/InserirUsuario");
 		mv.addObject("usuario",usuario);
 		return mv;
 	}

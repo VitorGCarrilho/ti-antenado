@@ -20,7 +20,7 @@ public class CursoController {
 	
 	@RequestMapping("")
 	public ModelAndView cursos(){	
-		ModelAndView mv = new ModelAndView("Cursos");
+		ModelAndView mv = new ModelAndView("Curso/Cursos");
 		List<Curso> cursos = cursoService.getAllInCurrentModule();
 		mv.addObject("cursos",cursos);
 		return mv;
@@ -28,16 +28,8 @@ public class CursoController {
 	
 	@RequestMapping("/{id}")
 	public ModelAndView curso(@PathVariable Long id){
-		ModelAndView mv = new ModelAndView("DetalhesCurso");
+		ModelAndView mv = new ModelAndView("Curso/DetalhesCurso");
 		Curso curso = cursoService.findById(id);
-		mv.addObject("curso", curso);
-		return mv;
-	}
-	
-	@RequestMapping("/teste")
-	public ModelAndView teste(){
-		ModelAndView mv = new ModelAndView("Layout/LayoutPadrao");
-		Curso curso = cursoService.findById(1);
 		mv.addObject("curso", curso);
 		return mv;
 	}
