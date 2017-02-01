@@ -28,21 +28,12 @@ layout:decorator="Layout/LayoutPadrao">
                     <div class="row">
                         <div class="col-sm-6 col-sm-offset-3 form-box">
                         	<div class="form-top">
-                        		<div class="form-top-left">
-                        			<h3>Login TI Antenado</h3>
-                        		</div>
                         		<div class="form-top-right">
                         			<i class="fa fa-key"></i>
                         		</div>
                             </div>
                             <div class="form-bottom">
-			                    <form role="form" th:action="@{/login}" method="post" class="login-form">
-			                    	<div th:if="${param.error}" class="alert alert-danger">
-			                    		Senha ou usuario invalido
-			                    	</div>
-			                    	<div th:if="${param.logout}" class="alert alert-success">
-			                    		Você acabou de fazer logout
-			                    	</div>
+			                    <form role="form" th:action="@{/login}" method="post" class="login-form">			                    	
 			                    	<div class="form-group">
 			                    		<label class="sr-only" for="form-username">Username</label>
 			                        	<input type="text" id="username" name="username" placeholder="Login" class="form-username form-control"/>
@@ -51,6 +42,12 @@ layout:decorator="Layout/LayoutPadrao">
 			                        	<label class="sr-only" for="form-password">Password</label>
 			                        	<input type="password" id="password" name="password" placeholder="Senha" class="form-password form-control"/>
 			                        </div>
+			                        <div th:if="${param.error}" class="alert alert-danger">
+			                    		Senha ou usuario invalido
+			                    	</div>
+			                    	<div th:if="${param.logout}" class="alert alert-success">
+			                    		Você acabou de fazer logout
+			                    	</div>
 			                        <button type="submit" class="btn">Sign in!</button>
 			                    </form>
 		                    </div>
