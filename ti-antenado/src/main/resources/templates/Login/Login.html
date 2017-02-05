@@ -43,7 +43,8 @@ layout:decorator="Layout/LayoutPadrao">
 			                        	<input type="password" id="password" name="password" placeholder="Senha" class="form-password form-control"/>
 			                        </div>
 			                        <div th:if="${param.error}" class="alert alert-danger">
-			                    		Senha ou usuario invalido
+			                    		<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+			                    		Usuario ou Senha  invalido
 			                    	</div>
 			                    	<div th:if="${param.logout}" class="alert alert-success">
 			                    		Você acabou de fazer logout
