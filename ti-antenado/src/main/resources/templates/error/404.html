@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorator="Layout/LayoutPadrao">
+	
+<th:block layout:fragment="conteudo">
+
+	<div class="container">
+		<h1>
+			<i class="fa  fa-location-arrow"></i> 404
+		</h1>
+		
+		<h2>Página não encontrada</h2>
+		
+		<div>
+			O URL solicitado [URL] não foi encontrado neste servidor.
+			<br/><br/>
+			<a href="javascript:history.back()" class="btn  btn-primary">Voltar para a página inicial</a>
+		</div>
+	</div>
+</th:block>
+	
+</html>
