@@ -15,16 +15,23 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	public void configureAuth(AuthenticationManagerBuilder auth) throws Exception{
-		auth.inMemoryAuthentication().withUser("vitor").password("senha").roles("USER","ADMIN")
-		.and().withUser("jose").password("senha").roles("USER");
+		auth
+			.inMemoryAuthentication()
+				.withUser("vitor")
+				.password("senha")
+				.roles("USER","ADMIN")
+			.and()
+				.withUser("jose")
+				.password("senha")
+				.roles("USER");
 	}
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http	
 			.authorizeRequests()
-				.antMatchers("/home","/cursos/**","/usuarios/cadastro","/css/**","/fonts/**","/images/**","/js/**").permitAll()
 				.antMatchers("/api/rest/**").hasRole("ADMIN")
+				.antMatchers("/home","/cursos/**","/usuarios/cadastro","/css/**","/fonts/**","/images/**","/js/**").permitAll()
 				.anyRequest().authenticated()
 				.and()
 			.formLogin()

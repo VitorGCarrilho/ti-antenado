@@ -1,0 +1,1 @@
+alter table tb_usuario add column DS_SENHA VARCHAR(1000);
