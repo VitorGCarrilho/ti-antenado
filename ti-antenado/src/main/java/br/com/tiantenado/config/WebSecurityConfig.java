@@ -20,29 +20,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
 	public void configureAuth(AuthenticationManagerBuilder auth) throws Exception{
-		//auth.userDetailsService(userDetailsService);
-		auth
-		.inMemoryAuthentication()
-			.withUser("vitor")
-			.password("senha")
-			.roles("USER","ADMIN")
-		.and()
-			.withUser("jose")
-			.password("senha")
-			.roles("USER");
+		auth.userDetailsService(userDetailsService);
 	}
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http	
 			.authorizeRequests()
-					.antMatchers("/api/rest/**").hasRole("ADMIN")
+					.antMatchers("/api/rest/**").hasRole("A")
 					.antMatchers("/home","/cursos/**","/usuarios/cadastro","/css/**","/fonts/**","/images/**","/js/**").permitAll()
 					.anyRequest().authenticated()
 					.and()
 			.formLogin()
 					.loginPage("/login")
-					.usernameParameter("email")
 					.permitAll()
 					.and()
 			.logout()
