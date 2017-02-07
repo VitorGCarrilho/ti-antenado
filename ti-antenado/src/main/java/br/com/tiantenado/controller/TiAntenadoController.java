@@ -36,6 +36,7 @@ public class TiAntenadoController {
 		List<Curso> cursos = cursoService.getAllInCurrentModule();		
 		mv.addObject("cursos", cursos);
 		mv.addObject("usuario",new Usuario());
+		Usuario usuario = usuarioRepository.findByDsEmail("vitorg.carrilho@gmail.com");
 		return mv;
 	}
 }

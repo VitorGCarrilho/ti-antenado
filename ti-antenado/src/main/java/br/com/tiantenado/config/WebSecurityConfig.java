@@ -9,33 +9,40 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
 @Configuration
 @EnableGlobalMethodSecurity(securedEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+	
+	@Autowired
+	private UserDetailsService userDetailsService;
+	
 	@Autowired
 	public void configureAuth(AuthenticationManagerBuilder auth) throws Exception{
+		//auth.userDetailsService(userDetailsService);
 		auth
-			.inMemoryAuthentication()
-				.withUser("vitor")
-				.password("senha")
-				.roles("USER","ADMIN")
-			.and()
-				.withUser("jose")
-				.password("senha")
-				.roles("USER");
+		.inMemoryAuthentication()
+			.withUser("vitor")
+			.password("senha")
+			.roles("USER","ADMIN")
+		.and()
+			.withUser("jose")
+			.password("senha")
+			.roles("USER");
 	}
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http	
 			.authorizeRequests()
-				.antMatchers("/api/rest/**").hasRole("ADMIN")
-				.antMatchers("/home","/cursos/**","/usuarios/cadastro","/css/**","/fonts/**","/images/**","/js/**").permitAll()
-				.anyRequest().authenticated()
-				.and()
+					.antMatchers("/api/rest/**").hasRole("ADMIN")
+					.antMatchers("/home","/cursos/**","/usuarios/cadastro","/css/**","/fonts/**","/images/**","/js/**").permitAll()
+					.anyRequest().authenticated()
+					.and()
 			.formLogin()
 					.loginPage("/login")
+					.usernameParameter("email")
 					.permitAll()
 					.and()
 			.logout()

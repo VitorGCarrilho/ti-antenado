@@ -71,7 +71,16 @@ public class Usuario {
 	@Column(name="DS_FACEBOOK")
 	private String dsFacebook;
 	
+	@Column(name="DS_SENHA")
+	@JsonIgnore
+	private String dsSenha;
 	
+	public String getDsSenha() {
+		return dsSenha;
+	}
+	public void setDsSenha(String dsSenha) {
+		this.dsSenha = dsSenha;
+	}
 	public String getDsImagem() {
 		return dsImagem;
 	}
