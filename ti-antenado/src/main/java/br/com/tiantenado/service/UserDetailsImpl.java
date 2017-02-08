@@ -23,13 +23,14 @@ public class UserDetailsImpl implements UserDetails {
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		Collection<GrantedAuthority> authorities = new HashSet<GrantedAuthority>();
-		authorities.add(new SimpleGrantedAuthority(usuario.getTipoUsuario().toString()));
+		authorities.add(new SimpleGrantedAuthority(usuario.getTipoUsuario().getDsTipoUsuario()));
 		
 		return authorities;
 	}
 
 	@Override
 	public String getPassword() {
+		System.out.println(usuario.getDsSenha());
 		return usuario.getDsSenha();
 	}
 

@@ -11,6 +11,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
+import br.com.tiantenado.model.TipoUsuario;
+
 @Configuration
 @EnableGlobalMethodSecurity(securedEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -24,10 +26,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 	
 	@Override
+	public void configure(WebSecurity web) throws Exception {
+		web.ignoring()
+			.antMatchers("/Layout/**");
+	}
+	
+	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http	
 			.authorizeRequests()
-					.antMatchers("/api/rest/**").hasRole("A")
+					.antMatchers("/api/rest/**").hasRole(TipoUsuario.P.getDsTipoUsuario())
 					.antMatchers("/home","/cursos/**","/usuarios/cadastro","/css/**","/fonts/**","/images/**","/js/**").permitAll()
 					.anyRequest().authenticated()
 					.and()
