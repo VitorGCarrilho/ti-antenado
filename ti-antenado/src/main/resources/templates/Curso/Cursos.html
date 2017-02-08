@@ -5,7 +5,7 @@ xmlns:th="http://www.thymeleaf.org"
 xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 layout:decorator="Layout/LayoutPadrao">
 
-<serction layout:fragment="conteudo"> 
+<div layout:fragment="conteudo" class="padding-footer"> 
 
 	<!-- INICIO CONTAINER 1 -->
 	<div class="bg-branco">
@@ -15,7 +15,6 @@ layout:decorator="Layout/LayoutPadrao">
 				<div class="col-lg-6">
 
 					<h1 class="underline-titulo">Cursos deste semestre</h1>
-
 
 					<p class="texto padding-top">
 						O curso de Ciência da Computação da UNISAL de Lorena oferece <strong>gratuitamente</strong>
@@ -27,9 +26,7 @@ layout:decorator="Layout/LayoutPadrao">
 						trabalho.
 					</p>
 					<br /> <br /> <br />
-
 				</div>
-
 
 				<div class="col-lg-6">
 					<div class="col-md-offset-3">
@@ -86,5 +83,5 @@ layout:decorator="Layout/LayoutPadrao">
 		<br /> <br />
 	</div>
 	<!-- FIM CONTEUDO 2 -->
-</serction>
+</div>
 </html>

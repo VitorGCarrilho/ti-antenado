@@ -8,129 +8,128 @@
 <title>TI Antenado 2017</title>
 <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="/css/stylesheet.css" />
-
 </head>
 
-<div class="cotainer"></div>
+
 
 <body>
+	<div class="content">
 
-
-	<!-- <nav class="navbar navbar-inverse navbar-fixed-top navbar-teste"> -->
-	<nav class="navbar navbar-estilo">
-		<div class="container-fluid">
-			<!--  <div class="navbar-header">
+		<!-- <nav class="navbar navbar-inverse navbar-fixed-top navbar-teste"> -->
+		<nav class="navbar navbar-estilo">
+			<div class="container-fluid">
+				<!--  <div class="navbar-header">
 				<a class="navbar-brand" href="#">WebSiteName</a>
 			</div> -->
-			<div class="container">
-				<ul class="nav navbar-nav">
-					<li><a href="/home">Início</a></li>
-					<!--  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+				<div class="container">
+					<ul class="nav navbar-nav">
+						<li><a href="/home">Início</a></li>
+						<!--  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
 				        <ul class="dropdown-menu">
 				          <li><a href="#">Page 1-1</a></li>
 				          <li><a href="#">Page 1-2</a></li>
 				          <li><a href="#">Page 1-3</a></li>
 				        </ul>
 				    </li>  -->
-					<li><a href="/cursos">Cursos</a></li>
-					<li><a href="#">Sobre</a></li>
-					<li><a href="#">Contato</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					
-					<form sec:authorize="isAuthenticated()" id="frmLogout" th:action="@{/logout}" method="post" >
-						<li>Bem vindo <span sec:authentication="name">Guest</span></li>
-						<li><a href="javascript:{}" onclick="document.getElementById('frmLogout').submit();return false;">Sair</a></li>
-					</form>
-					<li sec:authorize="not isAuthenticated()"><a href="/login" class="texto-botao">Acessar minha conta</a></li>
-					
-				</ul>
+						<li><a href="/cursos">Cursos</a></li>
+						<li><a href="#">Sobre</a></li>
+						<li><a href="#">Contato</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+
+						<form sec:authorize="isAuthenticated()" id="frmLogout"
+							th:action="@{/logout}" method="post">
+							<li>Bem vindo <span sec:authentication="name">Guest</span></li>
+							<li><a href="javascript:{}"
+								onclick="document.getElementById('frmLogout').submit();return false;">Sair</a></li>
+						</form>
+						<li sec:authorize="not isAuthenticated()"><a href="/login"
+							class="texto-botao">Acessar minha conta</a></li>
+
+					</ul>
+				</div>
 			</div>
+		</nav>
+
+		<!-- <div class="banner"></div> -->
+
+
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+				<li data-target="#myCarousel" data-slide-to="3"></li>
+			</ol>
 		</div>
-	</nav>
 
-	<!-- <div class="banner"></div> -->
+		<section layout:fragment="conteudo"></section>
 
+		<footer class="padding-top">
+			<div class="container">
+				<div class="row">
 
-	<div id="myCarousel" class="carousel slide" data-ride="carousel">
-		<!-- Indicators -->
-		<ol class="carousel-indicators">
-			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-			<li data-target="#myCarousel" data-slide-to="1"></li>
-			<li data-target="#myCarousel" data-slide-to="2"></li>
-			<li data-target="#myCarousel" data-slide-to="3"></li>
-		</ol>
+					<div class="col-lg-4">
+						<h4>Projeto Profissional TI Antenado 2017</h4>
+						<p class="padding-top">
+							<a href="#">Início</a>
+						</p>
+						<p>
+							<a href="#">Cursos</a>
+						</p>
+						<p>
+							<a href="#">Sobre</a>
+						</p>
+						<p>
+							<a href="#">Contato</a>
+						</p>
+					</div>
 
-	
-	</div>
+					<div class="col-lg-4">
+						<h4>Institucional</h4>
+						<p class="padding-top">
+							<a href="#">Conheça a UNISAL</a>
+						</p>
+						<p>
+							<a href="#">Projetos anterios</a>
+						</p>
+						<p>
+							<a href="#">Perguntas frequentes</a>
+						</p>
+					</div>
 
+					<div class="col-lg-4">
+						<h4>Fique informado do início de novas turmas</h4>
+						<form class="padding-top">
+							<div class="row">
+								<div class="form-group col-lg-12">
+									<label for="contato">E-mail:</label> <input type="text"
+										class="form-control" id="contato" name="contato"
+										placeholder="Seu melhor e-mail*" /> <br />
+									<button type="button" class="btn btn-danger texto-botao">Cadastrar</button>
+									<br />
+								</div>
 
-
-	<section layout:fragment="conteudo">
-	</section>
-
-	<footer class="padding-top">
-		<div class="container">
-			<div class="row">
-
-				<div class="col-lg-4">
-					<h4>Projeto Profissional TI Antenado 2017</h4>
-					<p class="padding-top">
-						<a href="#">Início</a>
-					</p>
-					<p>
-						<a href="#">Cursos</a>
-					</p>
-					<p>
-						<a href="#">Sobre</a>
-					</p>
-					<p>
-						<a href="#">Contato</a>
-					</p>
-				</div>
-
-				<div class="col-lg-4">
-					<h4>Institucional</h4>
-					<p class="padding-top">
-						<a href="#">Conheça a UNISAL</a>
-					</p>
-					<p>
-						<a href="#">Projetos anterios</a>
-					</p>
-					<p>
-						<a href="#">Perguntas frequentes</a>
-					</p>
-				</div>
-
-				<div class="col-lg-4">
-					<h4>Fique informado do início de novas turmas</h4>
-					<form class="padding-top">
-						<div class="row">
-							<div class="form-group col-lg-12">
-								<label for="contato">E-mail:</label> <input type="text"
-									class="form-control" id="contato" name="contato"
-									placeholder="Seu melhor e-mail*" /> <br />
-								<button type="button" class="btn btn-danger texto-botao">Cadastrar</button>
-								<br />
 							</div>
+						</form>
+					</div>
 
-						</div>
-					</form>
+
 				</div>
-
-
+				<div class="hr-footer">
+					<small class="padding-top">
+						Desenvolvido por <a href="#">Desenvolvedores Unisal</a>
+					</small>
+				</div>
 			</div>
-			<div class="hr-footer">
-				<small class="padding-top">Desenvolvido por <strong><a href="#">Desenvolvedores Unisal</a></strong>
-				</small>
-			</div>
-		</div>
-	</footer>
-	
-	
+		</footer>
 
-	<script type="text/javascript" src="/js/jquery.js"></script>
-	<script type="text/javascript" src="/js/jquery.min.js"></script>
-	<script type="text/javascript" src="/js/bootstrap.js"></script>
+
+
+		<script type="text/javascript" src="/js/jquery.js"></script>
+		<script type="text/javascript" src="/js/jquery.min.js"></script>
+		<script type="text/javascript" src="/js/bootstrap.js"></script>
+	</div>
 </body>
 </html>
