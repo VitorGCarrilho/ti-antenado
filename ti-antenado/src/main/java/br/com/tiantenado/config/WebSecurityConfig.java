@@ -2,6 +2,7 @@ package br.com.tiantenado.config;
 
 import org.aspectj.weaver.ast.And;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -12,9 +13,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 import br.com.tiantenado.model.TipoUsuario;
+import br.com.tiantenado.security.AppUserDetailService;
 
-@Configuration
-@EnableGlobalMethodSecurity(securedEnabled = true)
+@EnableWebSecurity
+@ComponentScan(basePackageClasses = AppUserDetailService.class)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
@@ -24,6 +26,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configureAuth(AuthenticationManagerBuilder auth) throws Exception{
 		auth.userDetailsService(userDetailsService);
 	}
+	
 	
 	@Override
 	public void configure(WebSecurity web) throws Exception {
@@ -35,7 +38,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http	
 			.authorizeRequests()
-					.antMatchers("/api/rest/**").hasRole(TipoUsuario.P.getDsTipoUsuario())
+					.antMatchers("/api/rest/**").hasAuthority(TipoUsuario.P.getDsTipoUsuario().toUpperCase())
 					.antMatchers("/home","/cursos/**","/usuarios/cadastro","/css/**","/fonts/**","/images/**","/js/**").permitAll()
 					.anyRequest().authenticated()
 					.and()
