@@ -240,3 +240,10 @@ footer small a:hover{
 	border-color: #4aaf51;
 }
 
+.nav-tabs>li.btnHomeActive>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #555;
+    cursor: default;
+    background-color: #ecf0f1;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+}
