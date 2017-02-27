@@ -6,6 +6,8 @@
 	layout:decorator="Layout/LayoutPadrao">
 
 <body class="bg-clouds">
+
+
 	<div layout:fragment="conteudo">
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			<!-- Indicators -->
@@ -27,7 +29,7 @@
 				</div>
 
 				<div class="item">
-					<img src="../images/banner-tiantenado2.png" alt="Chania" />
+					<img src="../images/banner-tiantenado3.png" alt="Chania" />
 					<div class="carousel-caption">
 						<!-- <h3>Chania</h3>
 					<p>The atmosphere in Chania has a touch of Florence and Venice.</p> -->
@@ -35,7 +37,7 @@
 				</div>
 
 				<div class="item">
-					<img src="../images/banner-tiantenado.png" alt="Chania" />
+					<img src="../images/banner-tiantenado5.png" alt="Chania" />
 					<div class="carousel-caption">
 						<!-- <h3>Chania</h3>
 					<p>The atmosphere in Chania has a touch of Florence and Venice.</p> -->
@@ -68,7 +70,7 @@
 		<div class="container">
 			<!-- INICIO CONTEUDO 1 -->
 			<div class="row">
-				<div class="col-lg-6">
+				<div class="col-lg-6 col-md-6">
 
 					<h1 class="padding-top underline-titulo">Projeto Profissional
 						TI Antenado 2017</h1>
@@ -89,68 +91,33 @@
 				</div>
 
 
-				<div class="col-lg-6">
+				<div class="col-lg-6 col-md-6 padding-bottom-tablet-e-menor">
 					<div class="col-md-offset-3">
 						<div>
 							<h1 class="padding-top underline-titulo">Inscreva-se</h1>
 						</div>
 
+						<form class="padding-top" method="POST"
+							action="/usuarios/cadastro" th:object="${usuario}">
+							<div class="row">
+								<div class="form-group col-md-12">
+									<label for="nome">Nome do Aluno:</label> <input type="text"
+										class="form-control" id="name" th:field="*{nmUsuario}"
+										placeholder="Nome completo *" />
+								</div>
+							</div>
 
-	
-						  <ul class="nav nav-tabs">
-						    <li class="btnHomeActive"><a data-toggle="tab" href="#home">Aluno</a></li>
-						    <li><a data-toggle="tab" href="#menu1">Professor</a></li>
-						  </ul>
+							<div class="row">
+								<div class="form-group col-md-12">
+									<label for="email">E-mail:</label> <input type="text"
+										class="form-control" id="email" th:field="*{dsEmail}"
+										placeholder="Seu melhor e-mail *" />
+								</div>
+							</div>
+							<br />
+							<button class="btn btn-danger texto-botao">Seguinte >></button>
 
-						  <div class="tab-content">
-						    <div id="home" class="tab-pane fade in active">
-						      <form class="padding-top" method="POST"
-									action="/usuarios/cadastro" th:object="${usuario}">
-									<div class="row">
-										<div class="form-group col-md-12">
-											<label for="nome">Nome do Aluno:</label> <input type="text"
-												class="form-control" id="name" th:field="*{nmUsuario}"
-												placeholder="Nome completo *" />
-										</div>
-									</div>
-
-									<div class="row">
-										<div class="form-group col-md-12">
-											<label for="email">E-mail:</label> <input type="text"
-												class="form-control" id="email" th:field="*{dsEmail}"
-												placeholder="Seu melhor e-mail *" />
-										</div>
-									</div>
-									<br />
-									<button class="btn btn-danger texto-botao">Seguinte >></button>
-									<br /> <br /> <br /> <br />
-								</form>
-						    </div>
-						    <div id="menu1" class="tab-pane fade">
-						      <form class="padding-top" method="POST"
-									action="/usuarios/cadastro" th:object="${usuario}">
-									<div class="row">
-										<div class="form-group col-md-12">
-											<label for="nome">Nome do Professor:</label> <input type="text"
-												class="form-control" id="name" th:field="*{nmUsuario}"
-												placeholder="Nome completo *" />
-										</div>
-									</div>
-
-									<div class="row">
-										<div class="form-group col-md-12">
-											<label for="email">E-mail:</label> <input type="text"
-												class="form-control" id="email" th:field="*{dsEmail}"
-												placeholder="Seu melhor e-mail *" />
-										</div>
-									</div>
-									<br />
-									<button class="btn btn-danger texto-botao">Seguinte >></button>
-									<br /> <br /> <br /> <br />
-								</form>
-						    </div>
-						  </div>
-
+						</form>
 					</div>
 				</div>
 
@@ -161,7 +128,7 @@
 		</div>
 		<!-- FIM CONTAINER 1 -->
 		<!-- INICIO CONTEUDO 2 -->
-		<div class="row bg-branco padding-footer">
+		<div class="bg-branco padding-footer">
 
 			<!-- INICIO CONTAINER 2 -->
 			<div class="container">
@@ -176,13 +143,12 @@
 				<div class="row">
 
 					<div class="col-lg-12 texto padding-top">
-						<p>Projeto que apresenta e ensina aos alunos a trabalhar com
-							as ferramentas do mercado de trabalho. Não perca essa
-							oportunidade estamos com poucas vagas disponíveis. Entre em
-							contato com coordenação e faça sua inscrição.</p>
-
+						<p>Projeto que apresenta e ensina os alunos a trabalhar com as
+							ferramentas do mercado de trabalho. Não perca essa oportunidade
+							estamos com poucas vagas disponíveis. Entre em contato com
+							coordenação e faça sua inscrição.</p>
 					</div>
-					<br />
+
 					<div class="col-lg-4 texto padding-top" th:each="curso : ${cursos}">
 						<a th:href="@{/cursos/{codigo}(codigo=${curso.cdCurso})}"
 							class="link-img">
@@ -201,7 +167,6 @@
 				</div>
 			</div>
 			<!-- FIM CONTAINER 2 -->
-			<br /> <br />
 		</div>
 		<!-- FIM CONTEUDO 2 -->
 	</div>

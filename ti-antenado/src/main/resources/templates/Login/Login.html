@@ -1,72 +1,70 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml"
-xmlns:th="http://www.thymeleaf.org"
-xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-layout:decorator="Layout/LayoutPadrao">
-	 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="Layout/LayoutPadrao">
 
-<serction layout:fragment="conteudo"> 
 
-    <body>
+<section layout:fragment="conteudo">
 
-        <!-- Top content -->
-        <div class="top-content">
-        	
-            <div class="inner-bg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1>Projeto TI Antenado</h1>
-                            <div class="description">
-                            	<p>
-	                            	Faça o login
-                            	</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6 col-sm-offset-3 form-box">
-                        	<div class="form-top">
-                        		<div class="form-top-right">
-                        			<i class="fa fa-key"></i>
-                        		</div>
-                            </div>
-                            <div class="form-bottom">
-			                    <form role="form" th:action="@{/login}" method="post" class="login-form">			                    	
-			                    	<div class="form-group">
-			                    		<label class="sr-only" for="form-username">Username</label>
-			                        	<input type="text" id="username" name="username" placeholder="Login" class="form-username form-control"/>
-			                        </div>
-			                        <div class="form-group">
-			                        	<label class="sr-only" for="form-password">Password</label>
-			                        	<input type="password" id="password" name="password" placeholder="Senha" class="form-password form-control"/>
-			                        </div>
-			                        <div th:if="${param.error}" class="alert alert-danger">
-			                    		<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-			                    		Usuario ou Senha  invalido
-			                    	</div>
-			                    	<div th:if="${param.logout}" class="alert alert-success">
-			                    		Você acabou de fazer logout
-			                    	</div>
-			                        <button type="submit" class="btn">Sign in!</button>
-			                    </form>
-		                    </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-            
-        </div>
-		<br/>
-		<br/>
-		<br/>
+	<body>
+
+		<!-- Top content -->
+
+		<div class="container margin-bottom">
+
+			<div class="row">
+				<div class="col-lg-3 col-md-offset-4">
+					<h1 class="underline-titulo padding-top">Entrar</h1>
+				</div>
+			</div>
+
+			<div class="row">
+
+				<div class="col-lg-4 col-md-offset-4 texto">
+					<p>Faça login para acessar o sistema.</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-4 col-md-offset-4 padding-top">
+					<form role="form" th:action="@{/login}" method="post"
+						class="login-form">
+						<div class="form-group">
+							<label class="sr-only" for="form-username">Username</label> <input
+								type="text" id="username" name="username" placeholder="Email"
+								class="form-username form-control" />
+						</div>
+						<div class="form-group">
+							<label class="sr-only" for="form-password">Password</label> <input
+								type="password" id="password" name="password"
+								placeholder="Senha" class="form-password form-control" />
+						</div>
+						<div th:if="${param.error}" class="alert alert-danger">
+							<span
+								class="glyphicon glyphicon-exclamation-sign glyphicon-vermelho"
+								aria-hidden="true"></span> Usuário ou Senha inválidos!
+						</div>
+
+						<div th:if="${param.logout}" class="alert alert-warning">
+							<span
+								class="glyphicon glyphicon-exclamation-sign glyphicon-amarelo"
+								aria-hidden="true"></span> Você está desconectado do sistema.
+							Para acessar efetue login novamente.
+						</div>
+						<button type="submit" class="btn btn-danger texto-botao">Entrar</button>
+					</form>
+				</div>
+			</div>
+			
+			
+		</div>
 
 
 
-    </body>
-	
-	
-</serction>
+	</body>
+
+
+</section>
 </html>
