@@ -21,7 +21,7 @@
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
-					<img src="../images/banner-tiantenado5.png" alt="Chania" />
+					<img src="../images/banner-tiantenado5.png" alt="TI Antenado 2017" />					
 					<div class="carousel-caption">
 						<!-- <h3>Chania</h3>
 					<p>The atmosphere in Chania has a touch of Florence and Venice.</p> -->
@@ -29,7 +29,7 @@
 				</div>
 
 				<div class="item">
-					<img src="../images/banner-tiantenado3.png" alt="Chania" />
+					<img src="../images/banner-tiantenado3.png" alt="TI Antenado 2017" />
 					<div class="carousel-caption">
 						<!-- <h3>Chania</h3>
 					<p>The atmosphere in Chania has a touch of Florence and Venice.</p> -->
@@ -37,7 +37,7 @@
 				</div>
 
 				<div class="item">
-					<img src="../images/banner-tiantenado5.png" alt="Chania" />
+					<img src="../images/banner-tiantenado5.png" alt="TI Antenado 2017" />
 					<div class="carousel-caption">
 						<!-- <h3>Chania</h3>
 					<p>The atmosphere in Chania has a touch of Florence and Venice.</p> -->
@@ -45,7 +45,7 @@
 				</div>
 
 				<div class="item">
-					<img src="../images/banner-tiantenado3.png" alt="Flower" />
+					<img src="../images/banner-tiantenado3.png" alt="TI Antenado 2017" />
 					<div class="carousel-caption">
 						<!-- <h3>Flowers</h3>
 					<p>Beatiful flowers in Kolymbari, Crete.</p> -->
@@ -70,23 +70,27 @@
 		<div class="container">
 			<!-- INICIO CONTEUDO 1 -->
 			<div class="row">
-				<div class="col-lg-6 col-md-6">
+				<div class="col-lg-6 col-md-6 padding-footer" id="subir">				
 
 					<h1 class="padding-top underline-titulo">Projeto Profissional
 						TI Antenado 2017</h1>
+					<!-- <a name="subir" id="subir"></a>  -->
+					
+					
 
 
 					<p class="texto padding-top">
 						O curso de Ciência da Computação da UNISAL de Lorena oferece <strong>gratuitamente</strong>
-						o programa de extensão <strong>Profissional TI Antenado.</strong>
-						Em sua quinta edição, o projeto tem por objetivo fornecer rápida
-						capacitação profissional aos alunos por meio de cursos rápidos
-						voltados à area de tecnologia da informação, provendo aos alunos
-						capacidade de trabalhar com as ferramentas atuais do mercado de
-						trabalho.
+						aos seus alunos e alunos de universidades da região o programa de
+						extensão <strong>Profissional TI Antenado.</strong>
 					</p>
-					<br /> <a href="#" class="btn btn-danger texto-botao">Saiba
-						mais</a> <br /> <br /> <br />
+					<p class="texto">Em sua quinta edição, o projeto tem por
+						objetivo fornecer uma rápida capacitação profissional aos alunos
+						por meio de cursos voltados à area de tecnologia da informação,
+						provendo aos alunos capacidade de trabalhar com as ferramentas
+						atuais do mercado de trabalho.</p>
+					<a href="#" class="btn btn-danger texto-botao">Saiba mais</a>
+
 
 				</div>
 
@@ -97,14 +101,15 @@
 							<h1 class="padding-top underline-titulo">Inscreva-se</h1>
 						</div>
 
-												  <ul class="nav nav-tabs">
-						    <li class="active btnHomeActive"><a data-toggle="tab" href="#home">Aluno</a></li>
-						    <li><a data-toggle="tab" href="#menu1">Professor</a></li>
-						  </ul>
+						<ul class="nav nav-tabs">
+							<li class="active btnHomeActive"><a data-toggle="tab"
+								href="#home">Aluno</a></li>
+							<li><a data-toggle="tab" href="#menu1">Professor</a></li>
+						</ul>
 
-						  <div class="tab-content">
-						    <div id="home" class="tab-pane fade in active">
-						      <form class="padding-top" method="POST"
+						<div class="tab-content">
+							<div id="home" class="tab-pane fade in active">
+								<form class="padding-top" method="POST"
 									action="/usuarios/cadastro" th:object="${usuario}">
 									<div class="row">
 										<div class="form-group col-md-12">
@@ -121,19 +126,19 @@
 												placeholder="Seu melhor e-mail *" />
 										</div>
 									</div>
-									<br />
+
 									<button class="btn btn-danger texto-botao">Seguinte >></button>
-									<br /> <br /> <br /> <br />
+
 								</form>
-						    </div>
-						    <div id="menu1" class="tab-pane fade">
-						      <form class="padding-top" method="POST"
+							</div>
+							<div id="menu1" class="tab-pane fade">
+								<form class="padding-top" method="POST"
 									action="/usuarios/cadastro" th:object="${usuario}">
 									<div class="row">
 										<div class="form-group col-md-12">
-											<label for="nome">Nome do Professor:</label> <input type="text"
-												class="form-control" id="name" th:field="*{nmUsuario}"
-												placeholder="Nome completo *" />
+											<label for="nome">Nome do Professor:</label> <input
+												type="text" class="form-control" id="name"
+												th:field="*{nmUsuario}" placeholder="Nome completo *" />
 										</div>
 									</div>
 
@@ -144,21 +149,17 @@
 												placeholder="Seu melhor e-mail *" />
 										</div>
 									</div>
-									<br />
 									<button class="btn btn-danger texto-botao">Seguinte >></button>
-									<br /> <br /> <br /> <br />
 								</form>
-						    </div>
-						  </div>
+							</div>
+						</div>
 					</div>
 				</div>
-
-
-
 			</div>
 			<!-- FIM CONTEUDO 1 -->
 		</div>
 		<!-- FIM CONTAINER 1 -->
+
 		<!-- INICIO CONTEUDO 2 -->
 		<div class="bg-branco padding-footer">
 
@@ -201,6 +202,52 @@
 			<!-- FIM CONTAINER 2 -->
 		</div>
 		<!-- FIM CONTEUDO 2 -->
+
+
+		<!-- INICIO CONTAINER 3 -->
+		<div class="container padding-bottom">
+			<!-- INICIO CONTEUDO 3 -->
+			<div class="row">
+				<div class="col-lg-12 col-md-12">
+					<h1 class="padding-top underline-titulo">Quer compartilhar
+						seus conhecimentos conosco?</h1>
+				</div>
+				<div class="col-lg-6 col-md-6">					
+
+					<p class="texto padding-top">Se você é professor ou
+						especializado em alguma área voltada à tecnologia compartilhe com
+						nossos alunos seus conhecimentos e experiências.</p>
+					<p class="texto padding-top">
+						Basta se inscrever <strong>como professor</strong> e enviar os
+						seguintes itens:
+					</p>
+					<ul class="texto-lista">
+						<li>Tema da aula <em>(Ex.: Desenvolvimento de apicativos
+								mobile)</em></li>
+						<li>Slides, PDF ou qualquer arquivo que será utilizado no dia
+							da aula</li>
+					</ul>
+					<p class="texto padding-top">
+						Está pronto para participar da formação dos nossos alunos? 
+						Clique no botão abaixo e faça parte desse projeto. 
+					</p>
+					
+					<a href="#subir" class="btn btn-danger texto-botao">Inscreva-se</a>
+					
+				</div>
+				
+				<div class="col-lg-6 col-md-6 padding-bottom-tablet-e-menor padding-top">
+					<img class="img-responsive" src="../images/alunos-tiantenado.jpg" alt="Alunos Ti Antenado" />					
+				</div>
+
+			</div>
+			<!-- FIM CONTEUDO 3 -->
+		</div>
+		<!-- FIM CONTAINER 3 -->
+
+
 	</div>
+	
+
 </body>
 </html>

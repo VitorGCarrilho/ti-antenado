@@ -17,22 +17,24 @@
 
 */
 
-/* ******** GERAL ******** */
+/* **************** FONTES **************** */
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+/* **************** GERAL **************** */
+* {
+	font-family: 'Josefin Sans', Caviar Dreams, sans-serif;
+	color: #414853;
+}
 html, body {
 	heigth: 100%;
 }
-
 .content {
-	min-height: 100%; //
+	min-height: 100%; 
 	position: relative;
 }
 
-/* ******** FONTES ******** */
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
-
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
-/* ******** NAVBAR ******** */
+/* **************** NAVBAR **************** */
 .navbar-estilo {
 	background-color: #fafafa;
 	padding: 15px 0 15px 0;
@@ -41,22 +43,14 @@ html, body {
 	width: 100%;
 	margin-bottom: 0;
 }
-
 .container ul li a {
 	margin: 0px;
 	padding: 20px;
 	font-size: 16px;
 }
-
 .container ul li a:hover {
 	background-color: #a0b5cb;
 	color: #ecf0f1;
-}
-
-/* ******** FONTES ******** */
-* {
-	font-family: 'Josefin Sans', Caviar Dreams, sans-serif;
-	color: #414853;
 }
 
 h1, h2, h3, h4, h5 {
@@ -65,7 +59,7 @@ h1, h2, h3, h4, h5 {
 
 h1 {
 	font-weight: 700;
-	font-size: 30px;
+	font-size: 28px;
 	color: #2c3e50;
 }
 
@@ -74,7 +68,7 @@ h4 {
 	color: #a0b5cb;
 }
 
-/* ******** BACKGROUND ******** */
+/* **************** BACKGROUND **************** */
 .bg-clouds {
 	background-color: #ecf0f1;
 }
@@ -110,7 +104,11 @@ h4 {
 	border-bottom: 1px solid #bdc3c7;
 }
 
-/* ******** FONTES ******** */
+/* **************** TEXTOS **************** */
+.texto {
+	font-size: 20px;
+	line-height: 1.6;
+}
 .texto-cinza-azulado {
 	color: #367eab;
 }
@@ -118,9 +116,9 @@ h4 {
 .texto-branco {
 	color: #fff;
 }
-
-.texto {
-	font-size: 20px;
+.texto-lista li{
+	font-size: 16px;
+	list-style-type: disc;
 	line-height: 1.6;
 }
 
@@ -174,7 +172,7 @@ ul li span {
 	color: #f1c40f;
 }
 
-/* ******** ESPACAMENTO ******** */
+/* **************** ESPACAMENTO **************** */
 .padding-top {
 	padding-top: 20px;
 }
@@ -191,12 +189,14 @@ ul li span {
 		
 	}
 }
-
 .margin-bottom {
 	margin-bottom: 20px;
 }
+.btn{
+	margin-top: 10px;
+}
 
-/* ********IMAGEM ******** */
+/* **************** IMAGENS **************** */
 .borda-img {
 	border: 1px solid #a0b5cb;
 }
@@ -209,16 +209,16 @@ ul li span {
 	text-decoration: none;
 }
 
-/* ******** FOOTER ******** */
+/* **************** FOOTER **************** */
 footer {
-	background-color: #2c3e50; //
-	position: absolute; //
-	bottom: 0;
+	background-color: #2c3e50;
+	 /* position: absolute; 
+	bottom: 0;*/
 	width: 100%;
 }
 
 .padding-footer {
-	padding-bottom: 350px;
+	padding-bottom: 40px;
 }
 
 footer div div div p a {
@@ -252,6 +252,8 @@ footer small a:hover {
 	height: 1px;
 	margin-top: 15px;
 }
+
+/* **************** FORMULARIO **************** */
 
 .form-box {
 	margin-top: 35px;
@@ -289,9 +291,14 @@ footer small a:hover {
 	border-color: #4aaf51;
 }
 
-nav-tabs>li.btnHomeActive>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+nav-tabs>li.btnHomeActive>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover {
     background-color: #ecf0f1;
 } 
-.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
-	background-color: #ecf0f1;
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover {
+	background-color: #a0b5cb;
+	color: #ecf0f1;
 }
