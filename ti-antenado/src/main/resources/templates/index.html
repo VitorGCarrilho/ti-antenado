@@ -97,27 +97,59 @@
 							<h1 class="padding-top underline-titulo">Inscreva-se</h1>
 						</div>
 
-						<form class="padding-top" method="POST"
-							action="/usuarios/cadastro" th:object="${usuario}">
-							<div class="row">
-								<div class="form-group col-md-12">
-									<label for="nome">Nome do Aluno:</label> <input type="text"
-										class="form-control" id="name" th:field="*{nmUsuario}"
-										placeholder="Nome completo *" />
-								</div>
-							</div>
+												  <ul class="nav nav-tabs">
+						    <li class="active btnHomeActive"><a data-toggle="tab" href="#home">Aluno</a></li>
+						    <li><a data-toggle="tab" href="#menu1">Professor</a></li>
+						  </ul>
 
-							<div class="row">
-								<div class="form-group col-md-12">
-									<label for="email">E-mail:</label> <input type="text"
-										class="form-control" id="email" th:field="*{dsEmail}"
-										placeholder="Seu melhor e-mail *" />
-								</div>
-							</div>
-							<br />
-							<button class="btn btn-danger texto-botao">Seguinte >></button>
+						  <div class="tab-content">
+						    <div id="home" class="tab-pane fade in active">
+						      <form class="padding-top" method="POST"
+									action="/usuarios/cadastro" th:object="${usuario}">
+									<div class="row">
+										<div class="form-group col-md-12">
+											<label for="nome">Nome do Aluno:</label> <input type="text"
+												class="form-control" id="name" th:field="*{nmUsuario}"
+												placeholder="Nome completo *" />
+										</div>
+									</div>
 
-						</form>
+									<div class="row">
+										<div class="form-group col-md-12">
+											<label for="email">E-mail:</label> <input type="text"
+												class="form-control" id="email" th:field="*{dsEmail}"
+												placeholder="Seu melhor e-mail *" />
+										</div>
+									</div>
+									<br />
+									<button class="btn btn-danger texto-botao">Seguinte >></button>
+									<br /> <br /> <br /> <br />
+								</form>
+						    </div>
+						    <div id="menu1" class="tab-pane fade">
+						      <form class="padding-top" method="POST"
+									action="/usuarios/cadastro" th:object="${usuario}">
+									<div class="row">
+										<div class="form-group col-md-12">
+											<label for="nome">Nome do Professor:</label> <input type="text"
+												class="form-control" id="name" th:field="*{nmUsuario}"
+												placeholder="Nome completo *" />
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="form-group col-md-12">
+											<label for="email">E-mail:</label> <input type="text"
+												class="form-control" id="email" th:field="*{dsEmail}"
+												placeholder="Seu melhor e-mail *" />
+										</div>
+									</div>
+									<br />
+									<button class="btn btn-danger texto-botao">Seguinte >></button>
+									<br /> <br /> <br /> <br />
+								</form>
+						    </div>
+						  </div>
 					</div>
 				</div>
 

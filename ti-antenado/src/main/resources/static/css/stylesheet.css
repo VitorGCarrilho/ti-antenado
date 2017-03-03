@@ -288,3 +288,10 @@ footer small a:hover {
 .form-bottom form .input-error {
 	border-color: #4aaf51;
 }
+
+nav-tabs>li.btnHomeActive>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    background-color: #ecf0f1;
+} 
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+	background-color: #ecf0f1;
+}
