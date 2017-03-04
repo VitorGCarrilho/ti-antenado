@@ -21,7 +21,7 @@
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
-					<img src="../images/banner-tiantenado5.png" alt="TI Antenado 2017" />					
+					<img src="../images/banner-tiantenado5.png" alt="TI Antenado 2017" />
 					<div class="carousel-caption">
 						<!-- <h3>Chania</h3>
 					<p>The atmosphere in Chania has a touch of Florence and Venice.</p> -->
@@ -70,13 +70,13 @@
 		<div class="container">
 			<!-- INICIO CONTEUDO 1 -->
 			<div class="row">
-				<div class="col-lg-6 col-md-6 padding-footer" id="subir">				
+				<div class="col-lg-6 col-md-6 padding-footer" id="subir">
 
 					<h1 class="padding-top underline-titulo">Projeto Profissional
 						TI Antenado 2017</h1>
 					<!-- <a name="subir" id="subir"></a>  -->
-					
-					
+
+
 
 
 					<p class="texto padding-top">
@@ -160,94 +160,93 @@
 		</div>
 		<!-- FIM CONTAINER 1 -->
 
-		<!-- INICIO CONTEUDO 2 -->
-		<div class="bg-branco padding-footer">
 
-			<!-- INICIO CONTAINER 2 -->
-			<div class="container">
 
+		<!-- INICIO CONTAINER 2 -->
+		<div class="bg-branco">
+			<div class="container padding-bottom">
+				<!-- INICIO CONTEUDO 2 -->
 				<div class="row">
-					<div class="col-lg-12">
-						<h1 class="underline-titulo padding-top">Confira os cursos
-							deste semestre</h1>
+					<div class="col-lg-12 col-md-12">
+						<h1 class="padding-top underline-titulo">Quer compartilhar
+							seus conhecimentos conosco?</h1>
 					</div>
+					
+					<div class="col-lg-6 col-md-6 padding-bottom-tablet-e-menor padding-top">
+						<img class="img-responsive center-block" src="../images/professor.png"
+							alt="Alunos Ti Antenado" />
+						<!-- <img class="img-responsive" src="../images/alunos-tiantenado.jpg"
+							alt="Alunos Ti Antenado" /> -->
+					</div>
+					
+					<div class="col-lg-6 col-md-6">
+
+						<p class="texto padding-top">Se você é professor ou
+							especializado em alguma área voltada à tecnologia compartilhe com
+							nossos alunos seus conhecimentos e experiências.</p>
+						<p class="texto padding-top">
+							Basta se inscrever <strong>como professor</strong> e enviar os
+							seguintes itens:
+						</p>
+						<ul class="texto-lista">
+							<li>Tema da aula <em>(Ex.: Desenvolvimento de
+									apicativos mobile)</em></li>
+							<li>Slides, PDF ou qualquer arquivo que será utilizado no
+								dia da aula</li>
+						</ul>
+						<p class="texto padding-top">Está pronto para participar da
+							formação dos nossos alunos? Clique no botão abaixo e faça parte
+							desse projeto.</p>
+
+						<a href="#subir" class="btn btn-danger texto-botao">Inscreva-se</a>
+
+					</div>					
+
 				</div>
-
-				<div class="row">
-
-					<div class="col-lg-12 texto padding-top">
-						<p>Projeto que apresenta e ensina os alunos a trabalhar com as
-							ferramentas do mercado de trabalho. Não perca essa oportunidade
-							estamos com poucas vagas disponíveis. Entre em contato com
-							coordenação e faça sua inscrição.</p>
-					</div>
-
-					<div class="col-lg-4 texto padding-top" th:each="curso : ${cursos}">
-						<a th:href="@{/cursos/{codigo}(codigo=${curso.cdCurso})}"
-							class="link-img">
-							<div class="media borda-img container-img">
-								<img th:src="${curso.dsImagem}"
-									class="media-object img-responsive" />
-								<div class="media-body">
-									<h4 class="media-heading text-center padding-top"
-										th:text="${curso.nmCurso}">nome</h4>
-									<hr />
-									<p class="text-center" th:text="${curso.dsCurso}"></p>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
+				<!-- FIM CONTEUDO 2 -->
 			</div>
-			<!-- FIM CONTAINER 2 -->
 		</div>
-		<!-- FIM CONTEUDO 2 -->
+		<!-- FIM CONTAINER 2 -->
 
-
+		
 		<!-- INICIO CONTAINER 3 -->
-		<div class="container padding-bottom">
-			<!-- INICIO CONTEUDO 3 -->
+		<div class="container padding-footer">
+
 			<div class="row">
-				<div class="col-lg-12 col-md-12">
-					<h1 class="padding-top underline-titulo">Quer compartilhar
-						seus conhecimentos conosco?</h1>
+				<div class="col-lg-12">
+					<h1 class="underline-titulo padding-top">Confira os cursos
+						deste semestre</h1>
 				</div>
-				<div class="col-lg-6 col-md-6">					
-
-					<p class="texto padding-top">Se você é professor ou
-						especializado em alguma área voltada à tecnologia compartilhe com
-						nossos alunos seus conhecimentos e experiências.</p>
-					<p class="texto padding-top">
-						Basta se inscrever <strong>como professor</strong> e enviar os
-						seguintes itens:
-					</p>
-					<ul class="texto-lista">
-						<li>Tema da aula <em>(Ex.: Desenvolvimento de apicativos
-								mobile)</em></li>
-						<li>Slides, PDF ou qualquer arquivo que será utilizado no dia
-							da aula</li>
-					</ul>
-					<p class="texto padding-top">
-						Está pronto para participar da formação dos nossos alunos? 
-						Clique no botão abaixo e faça parte desse projeto. 
-					</p>
-					
-					<a href="#subir" class="btn btn-danger texto-botao">Inscreva-se</a>
-					
-				</div>
-				
-				<div class="col-lg-6 col-md-6 padding-bottom-tablet-e-menor padding-top">
-					<img class="img-responsive" src="../images/alunos-tiantenado.jpg" alt="Alunos Ti Antenado" />					
-				</div>
-
 			</div>
-			<!-- FIM CONTEUDO 3 -->
+
+			<div class="row">
+
+				<div class="col-lg-12 texto padding-top">
+					<p>Projeto que apresenta e ensina os alunos a trabalhar com as
+						ferramentas do mercado de trabalho. Não perca essa oportunidade
+						estamos com poucas vagas disponíveis. Entre em contato com
+						coordenação e faça sua inscrição.</p>
+				</div>
+
+				<div class="col-lg-4 texto padding-top" th:each="curso : ${cursos}">
+					<a th:href="@{/cursos/{codigo}(codigo=${curso.cdCurso})}"
+						class="link-img">
+						<div class="media borda-img container-img">
+							<img th:src="${curso.dsImagem}"
+								class="media-object img-responsive" />
+							<div class="media-body">
+								<h4 class="media-heading text-center padding-top"
+									th:text="${curso.nmCurso}">nome</h4>
+								<hr />
+								<p class="text-center" th:text="${curso.dsCurso}"></p>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
 		</div>
 		<!-- FIM CONTAINER 3 -->
 
-
 	</div>
-	
-
 </body>
 </html>
