@@ -3,6 +3,7 @@ package br.com.tiantenado.controller;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.method;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,8 +16,9 @@ import br.com.tiantenado.model.Usuario;
 @RequestMapping("alunos")
 public class AlunoController {
 	
-	@PostMapping(value="cadastro")
-	public ModelAndView inserirUsuario(@ModelAttribute("usuario") Usuario usuario){	
+	@RequestMapping(value="cadastro", method=RequestMethod.POST)
+	public ModelAndView inserirUsuario(Usuario usuario){	
+		System.out.println("metodo chamado: usuario "+ usuario.getNmUsuario());
 		ModelAndView mv = new ModelAndView("Usuario/InserirAluno");
 		mv.addObject("usuario",usuario);
 		return mv;

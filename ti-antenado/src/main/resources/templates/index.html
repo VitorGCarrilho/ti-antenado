@@ -110,7 +110,7 @@
 						<div class="tab-content">
 							<div id="home" class="tab-pane fade in active">
 								<form class="padding-top" method="POST"
-									action="/alunos/cadastro" th:object="${usuario}">
+									th:action="@{/alunos/cadastro}" th:object="${usuario}">
 									<div class="row">
 										<div class="form-group col-md-12">
 											<label for="nome">Nome do Aluno:</label> <input type="text"
@@ -133,7 +133,7 @@
 							</div>
 							<div id="menu1" class="tab-pane fade">
 								<form class="padding-top" method="POST"
-									action="/professor/cadastro" th:object="${usuario}">
+									th:action="@{/professor/cadastro}" th:object="${usuario}">
 									<div class="row">
 										<div class="form-group col-md-12">
 											<label for="nome">Nome do Professor:</label> <input
