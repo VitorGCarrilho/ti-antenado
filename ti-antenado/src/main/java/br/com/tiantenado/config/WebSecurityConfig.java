@@ -39,7 +39,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		http	
 			.authorizeRequests()
 					.antMatchers("/api/rest/**").hasAuthority(TipoUsuario.P.getDsTipoUsuario().toUpperCase())
-					.antMatchers("/home","/teste","/cursos/**","/usuarios/cadastro","/css/**","/fonts/**","/images/**","/js/**").permitAll()
+					.antMatchers("/home","/cursos/**","/usuarios/cadastro","/css/**","/fonts/**","/images/**","/js/**").permitAll()
 					.anyRequest().authenticated()
 					.and()
 			.formLogin()
