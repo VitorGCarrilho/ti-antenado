@@ -12,20 +12,20 @@ import org.springframework.web.servlet.ModelAndView;
 import br.com.tiantenado.model.Usuario;
 
 @Controller
-@RequestMapping("/usuarios")
-public class UsuarioController {
+@RequestMapping("alunos")
+public class AlunoController {
 	
-	@PostMapping(value="/cadastro")
+	@PostMapping(value="cadastro")
 	public ModelAndView inserirUsuario(@ModelAttribute("usuario") Usuario usuario){	
-		ModelAndView mv = new ModelAndView("Usuario/InserirUsuario");
+		ModelAndView mv = new ModelAndView("Usuario/InserirAluno");
 		mv.addObject("usuario",usuario);
 		return mv;
 	}
 	
-	@RequestMapping("/cadastro")
+	@RequestMapping("cadastro")
 	public ModelAndView inserirUsuario(){		
 		Usuario usuario = new Usuario();
-		ModelAndView mv = new ModelAndView("Usuario/InserirUsuario");
+		ModelAndView mv = new ModelAndView("Usuario/InserirAluno");
 		mv.addObject("usuario",usuario);
 		return mv;
 	}

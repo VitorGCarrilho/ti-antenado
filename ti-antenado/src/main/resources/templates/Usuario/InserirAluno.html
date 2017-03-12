@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="Layout/LayoutPadrao">
+
+<serction layout:fragment="conteudo"> 
+<div class="container">
+		<!-- INICIO CONTEUDO -->
+		
+		<div class="row">
+
+				<br /> <br />
+				<div class="col-md-3"></div> 
+				<div class="col-md-6 offset-md-6">
+					<div>
+						<h1>Insira todos os dados para realizar seu cadastro de Aluno</h1>
+						<p class="texto">Conte-nos mais sobre você:</p>
+					</div>
+
+
+					<br />
+
+					<form>
+						<div class="row">
+							<div class="form-group col-md-12">
+								<input type="text" class="form-control" id="nome" name="nome"
+									placeholder="Nome completo *" th:value="${usuario.nmUsuario}"/>
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="form-group col-md-12">
+								<input type="date" class="form-control" id="data" name="data"
+									placeholder="Data de nascimento *" />
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="form-group col-md-6">
+								<input type="text" class="form-control" id="telefone"
+									name="telefone" placeholder="Telefone *" />
+							</div>
+
+							<div class="form-group col-md-6">
+								<input type="text" class="form-control" id="celular"
+									name="
+									
+									celular" placeholder="Celular" />
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="form-group col-md-12">
+								<input type="text" class="form-control" id="endereco" name="endereco"
+									placeholder="Endereço *" />
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="form-group col-md-12">
+								<input type="text" class="form-control" id="email" name="email"
+									placeholder="Seu melhor e-mail *" th:value="${usuario.dsEmail}"/>
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="form-group col-md-12">
+								<input type="text" class="form-control" id="instituicao" name="instituicao"
+									placeholder="Instituicao" />
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="form-group col-md-12">
+								<input type="text" class="form-control" id="linkedin" name="linkedin"
+									placeholder="Endereço Linkedin" />
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="form-group col-md-12">
+								<input type="text" class="form-control" id="emapresa" name="empresa"
+									placeholder="Empresa" />
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="form-group col-md-12">
+								<input type="text" class="form-control" id="cargo" name="cargo"
+									placeholder="Cargo" />
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="form-group col-md-12">
+								<input type="file" class="form-control" id="imagem" name="imagem"
+									placeholder="Imagem de perfil" />
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="form-group col-md-6">
+								<input type="password" class="form-control" id="senha"
+									name="senha" placeholder="Senha *" />
+							</div>
+
+							<div class="form-group col-md-6">
+								<input type="password" class="form-control" id="confirmarsenha"
+									name="confirmarsenha" placeholder="Confirmar senha *" />
+							</div>
+						</div>
+
+						<button type="submit" class="btn btn-primary texto-botao">Cadastrar</button>
+					</form>
+
+				</div>
+			
+		</div>
+		<br/>
+
+		<!-- FIM CONTEUDO -->
+</div>
+</serction>
+</html>
