@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -24,6 +26,7 @@ public class Usuario {
 	private long cdUsuario;
 	
 	@Column(name="NM_USUARIO")
+	@NotNull
 	private String nmUsuario;
 	
 	@Column(name="NR_FONE")
@@ -39,6 +42,7 @@ public class Usuario {
 	private String dsInstituicao;
 	
 	@Column(name="DS_EMAIL")
+	@NotNull
 	private String dsEmail;
 	
 	@Column(name="DT_NASCIMENTO")
@@ -72,9 +76,24 @@ public class Usuario {
 	private String dsFacebook;
 	
 	@Column(name="DS_SENHA")
+	@NotNull
 	@JsonIgnore
 	private String dsSenha;
 	
+	@Transient
+	@NotNull
+	private String dsConfirmacaoSenha;
+	
+	public boolean isValidPassword(){
+		return !this.dsSenha.isEmpty() ? this.dsSenha.equals(this.dsConfirmacaoSenha) : false;
+	}
+	
+	public String getDsConfirmacaoSenha() {
+		return dsConfirmacaoSenha;
+	}
+	public void setDsConfirmacaoSenha(String dsConfirmacaoSenha) {
+		this.dsConfirmacaoSenha = dsConfirmacaoSenha;
+	}
 	public String getDsSenha() {
 		return dsSenha;
 	}

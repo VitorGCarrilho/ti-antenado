@@ -22,11 +22,11 @@ layout:decorator="Layout/LayoutPadrao">
 
 					
 
-					<form class="padding-top">
+					<form class="padding-top" th:action="@{/alunos/salvar}"  method="POST" th:object="${usuario}">
 						<div class="row">
 							<div class="form-group col-md-12">
 							<label for="nome">Nome</label>
-								<input type="text" class="form-control" id="nome" name="nome"
+								<input type="text" class="form-control" id="nome" name="nmUsuario"
 									placeholder="Nome completo *" th:value="${usuario.nmUsuario}"/>
 							</div>
 						</div>
@@ -34,7 +34,7 @@ layout:decorator="Layout/LayoutPadrao">
 						<div class="row">
 							<div class="form-group col-md-12">
 								<label for="data">Data de nascimento</label>
-								<input type="date" class="form-control" id="data" name="data"
+								<input type="date" class="form-control" id="data" name="dtNascimento"
 									placeholder="Data de nascimento *" />
 							</div>
 						</div>
@@ -43,20 +43,20 @@ layout:decorator="Layout/LayoutPadrao">
 							<div class="form-group col-md-6">
 								<label for="telefone">Telefone</label>
 								<input type="text" class="form-control" id="telefone"
-									name="telefone" placeholder="Telefone *" />
+									name="nrFone" placeholder="Telefone *" />
 							</div>
 
 							<div class="form-group col-md-6">
 								<label for="celular">Celular</label>
 								<input type="text" class="form-control" id="celular"
-									name="celular" placeholder="Celular" />
+									name="nrCel" placeholder="Celular" />
 							</div>
 						</div>
 						
 						<div class="row">
 							<div class="form-group col-md-12">
 								<label for="endereco">Endereço</label>
-								<input type="text" class="form-control" id="endereco" name="endereco"
+								<input type="text" class="form-control" id="endereco" name="dsEndereco"
 									placeholder="Endereço *" />
 							</div>
 						</div>
@@ -64,7 +64,7 @@ layout:decorator="Layout/LayoutPadrao">
 						<div class="row">
 							<div class="form-group col-md-12">
 								<label for="email">Email</label>
-								<input type="text" class="form-control" id="email" name="email"
+								<input type="text" class="form-control" id="email" name="dsEmail"
 									placeholder="Seu melhor e-mail *" th:value="${usuario.dsEmail}"/>
 							</div>
 						</div>
@@ -72,30 +72,30 @@ layout:decorator="Layout/LayoutPadrao">
 						<div class="row">
 							<div class="form-group col-md-12">
 								<label for="instituicao">Instuição</label>
-								<input type="text" class="form-control" id="instituicao" name="instituicao"
+								<input type="text" class="form-control" id="dsInstituicao" name="dsInstituicao"
 									placeholder="Instituicao" />
 							</div>
 						</div>	
-						
+						<!-- 
 						<div class="row">
 							<div class="form-group col-md-12">
 								<label for="imagem">Imagem</label>
 								<input type="file" class="form-control" id="imagem" name="imagem"
 									placeholder="Imagem de perfil" />
 							</div>
-						</div>
+						</div> -->
 
 						<div class="row">
 							<div class="form-group col-md-6">
 								<label for="senha">Senha</label>
-								<input type="password" class="form-control" id="senha"
-									name="senha" placeholder="Senha *" />
+								<input type="password" class="form-control" id="dsSenha"
+									name="dsSenha" placeholder="Senha *" />
 							</div>
 
 							<div class="form-group col-md-6">
 								<label for="confirmarsenha">Confirmar senha</label>
-								<input type="password" class="form-control" id="confirmarsenha"
-									name="confirmarsenha" placeholder="Confirmar senha *" />
+								<input type="password" class="form-control" id="dsConfirmacaoSenha"
+									name="dsConfirmacaoSenha" placeholder="Confirmar senha *"  />
 							</div>
 						</div>
 
