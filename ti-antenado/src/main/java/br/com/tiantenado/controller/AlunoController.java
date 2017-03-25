@@ -3,7 +3,6 @@ package br.com.tiantenado.controller;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,41 +11,32 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import br.com.tiantenado.model.TipoUsuario;
+import br.com.tiantenado.exception.EmailJaCadastradoException;
+import br.com.tiantenado.exception.SenhaInvalidaException;
 import br.com.tiantenado.model.Usuario;
-import br.com.tiantenado.repository.UsuarioRepository;
+import br.com.tiantenado.service.AlunoService;
 
 @Controller
 @RequestMapping("alunos")
 public class AlunoController {
 	
 	@Autowired
-	private UsuarioRepository usuarioRepository;
-	
-	@Autowired
-	private PasswordEncoder passWordEncoder;
+	private AlunoService alunoService;
 	
 	@RequestMapping(path="salvar",  method=RequestMethod.POST)
 	public ModelAndView salvarUsuario(@Valid Usuario usuario,  BindingResult result, 
 			RedirectAttributes attributes){
-		Usuario user = usuarioRepository.findByDsEmail(usuario.getDsEmail());
-		
-		if (usuario.isValidPassword()){
-			usuario.setDsSenha(this.passWordEncoder.encode(usuario.getDsSenha()));
-			usuario.setTipoUsuario(TipoUsuario.A);		
-			usuarioRepository.save(usuario);
-		} else { 
-			result.rejectValue("dsSenha", "Senhas invalidas", "Senhas invalidas");
-			//return salvarUsuario(usuario, result, attributes);
+		try {
+			alunoService.cadastrarAluno(usuario, result, attributes);
+		} catch (EmailJaCadastradoException e) {
+			// ##TODO Tratar
+			e.printStackTrace();
+		} catch (SenhaInvalidaException e) {
+			// ##TODO Tratar
+			e.printStackTrace();
 		}
 		
 		return new ModelAndView("redirect:/home");
-	}
-	
-	@RequestMapping(path="salvar", method=RequestMethod.GET)
-	@ResponseBody
-	public String salvarUsuario(){
-		return "salvo";
 	}
 	
 	
