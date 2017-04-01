@@ -2,6 +2,8 @@ package br.com.tiantenado.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
@@ -11,6 +13,7 @@ import javax.persistence.ManyToOne;
 public class Matricula {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="CD_MATRICULA")
 	private long cdMatricula;
 	

@@ -35,8 +35,8 @@ public class AlunoController {
 			// ##TODO Tratar
 			e.printStackTrace();
 		}
-		
-		return new ModelAndView("redirect:/home");
+		attributes.addAttribute("User", usuario);
+		return new ModelAndView("redirect:/login");
 	}
 	
 	
