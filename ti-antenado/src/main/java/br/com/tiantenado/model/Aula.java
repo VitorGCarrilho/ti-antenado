@@ -21,7 +21,7 @@ public class Aula {
 	private Date dtAula;
 	
 	@OneToOne
-	@JoinColumn(name="CD_CURSO")
+	@JoinColumn(name="CD_AULA")
 	private Curso curso;
 
 	public long getCdAula() {

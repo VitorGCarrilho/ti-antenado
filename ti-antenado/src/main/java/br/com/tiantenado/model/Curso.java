@@ -1,6 +1,7 @@
 package br.com.tiantenado.model;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -24,6 +25,10 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+/**
+ * @author vitor
+ *
+ */
 @Entity
 @Table(name="TB_CURSO")
 public class Curso {
@@ -53,6 +58,11 @@ public class Curso {
 	
 	@Column(name="DS_IMAGEM")
 	private String dsImagem;
+	
+	@OneToMany
+	@JoinColumn(name="CD_AULA")
+	@JsonIgnore
+	private List<Aula> aulas;
 	
 	
 	public long getCdModulo() {
@@ -90,9 +100,7 @@ public class Curso {
 	}
 	public void setProfessor(Usuario professor) {
 		this.professor = professor;
-	}
-	
-	
+	}	
 	public String getDsImagem() {
 		return dsImagem;
 	}
@@ -100,6 +108,14 @@ public class Curso {
 		this.dsImagem = dsImagem;
 	}
 	
+	
+	
+	public List<Aula> getAulas() {
+		return aulas;
+	}
+	public void setAulas(List<Aula> aulas) {
+		this.aulas = aulas;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
