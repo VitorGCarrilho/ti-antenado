@@ -4,70 +4,70 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 layout:decorator="Layout/LayoutPadrao">
 
 <section layout:fragment="conteudo"> 
-<div class="container">
+	<div class="container">
 		<!-- INICIO CONTEUDO -->
 		
 		<div class="row">
 
-				<br /> <br />
-				<div class="col-md-2"></div> 
-				<div class="col-md-8 offset-md-6">
+
+			<div class="col-md-2"></div> 
+			<div class="col-md-8 offset-md-6 padding-top">
 				<!-- <div class="col-md-6 offset-md-6"> -->
-					<div>
-						<h1>Cadastro de Aluno</h1>
-						<p class="texto">Conte-nos mais sobre você:</p>
-					</div>					
+				<div>
+					<h1>Cadastro de Aluno</h1>
+					<p class="texto">Conte-nos mais sobre você:</p>
+				</div>					
 
-					<form class="padding-top" th:action="@{/alunos/salvar}"  method="POST" th:object="${usuario}">
-						<div class="row">
-							<div class="form-group col-md-12">
+				<form class="padding-top" th:action="@{/alunos/salvar}"  method="POST" th:object="${usuario}">
+					<div class="row">
+						<div class="form-group col-md-12">
 							<label for="nome">Nome</label>
-								<input type="text" class="form-control" id="nome" name="nmUsuario"
-									placeholder="Nome completo *" th:value="${usuario.nmUsuario}"/>
-							</div>
+							<input type="text" class="form-control" id="nome" name="nmUsuario"
+							placeholder="Nome completo *" th:value="${usuario.nmUsuario}"/>
 						</div>
-						
-						<div class="row">
-							<div class="form-group col-md-12">
-								<label for="data">Data de nascimento</label>
-								<input type="date" class="form-control" id="data" name="dtNascimento"
-									placeholder="Data de nascimento *" />
-							</div>
-						</div>						
-						
-						<div class="row">
-							<div class="form-group col-md-6 col-sm-6">
-								<label for="endereco">Endereço</label>
-								<input type="text" class="form-control" id="endereco" name="dsEndereco" placeholder="Endereço *" />
-							</div>
+					</div>
 
-							<div class="form-group col-md-6 col-sm-6">
-								<label for="cidade">Cidade</label>
-								<input type="text" class="form-control" id="cidade" name="dsCidade" placeholder="Cidade *" />
-							</div>
+					<div class="row">
+						<div class="form-group col-md-12">
+							<label for="data">Data de nascimento</label>
+							<input type="date" class="form-control" id="data" name="dtNascimento"
+							placeholder="Data de nascimento *" />
 						</div>
-						
-						<div class="row">
-							<div class="form-group col-md-6 col-sm-6">
-								<label for="telefone">Telefone</label>
-								<input type="text" class="form-control" id="telefone"
-									name="nrFone" placeholder="XX XXXX-XXXX *" />
-							</div>
+					</div>						
 
-							<div class="form-group col-md-6 col-sm-6">
-								<label for="celular">Celular</label>
-								<input type="text" class="form-control" id="celular"
-									name="nrCel" placeholder="XX XXXXX-XXXX" />
-							</div>
-						</div>										
-						
-						<div class="row">
-							<div class="form-group col-md-12">
-								<label for="instituicao">Instituição de ensino</label>
-								<input type="text" class="form-control" id="dsInstituicao" name="dsInstituicao"
-									placeholder="Onde você estuda?" />
-							</div>
-						</div>	
+					<div class="row">
+						<div class="form-group col-md-6 col-sm-6">
+							<label for="endereco">Endereço</label>
+							<input type="text" class="form-control" id="endereco" name="dsEndereco" placeholder="Endereço *" />
+						</div>
+
+						<div class="form-group col-md-6 col-sm-6">
+							<label for="cidade">Cidade</label>
+							<input type="text" class="form-control" id="cidade" name="dsCidade" placeholder="Cidade *" />
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="form-group col-md-6 col-sm-6">
+							<label for="telefone">Telefone</label>
+							<input type="text" class="form-control" id="telefone"
+							name="nrFone" placeholder="XX XXXX-XXXX *" />
+						</div>
+
+						<div class="form-group col-md-6 col-sm-6">
+							<label for="celular">Celular</label>
+							<input type="text" class="form-control" id="celular"
+							name="nrCel" placeholder="XX XXXXX-XXXX" />
+						</div>
+					</div>										
+
+					<div class="row">
+						<div class="form-group col-md-12">
+							<label for="instituicao">Instituição de ensino</label>
+							<input type="text" class="form-control" id="dsInstituicao" name="dsInstituicao"
+							placeholder="Onde você estuda?" />
+						</div>
+					</div>	
 						<!-- 
 						<div class="row">
 							<div class="form-group col-md-12">
@@ -81,7 +81,7 @@ layout:decorator="Layout/LayoutPadrao">
 							<div class="form-group col-md-12">
 								<label for="email">Email</label>
 								<input type="text" class="form-control" id="email" name="dsEmail"
-									placeholder="Seu melhor e-mail *" th:value="${usuario.dsEmail}"/>
+								placeholder="Seu melhor e-mail *" th:value="${usuario.dsEmail}"/>
 							</div>
 						</div>
 
@@ -89,13 +89,13 @@ layout:decorator="Layout/LayoutPadrao">
 							<div class="form-group col-md-6 col-sm-6">
 								<label for="senha">Senha</label>
 								<input type="password" class="form-control" id="dsSenha"
-									name="dsSenha" placeholder="Senha *" />
+								name="dsSenha" placeholder="Senha *" />
 							</div>
 
 							<div class="form-group col-md-6 col-sm-6">
 								<label for="confirmarsenha">Confirmar senha</label>
 								<input type="password" class="form-control" id="dsConfirmacaoSenha"
-									name="dsConfirmacaoSenha" placeholder="Confirmar senha *"  />
+								name="dsConfirmacaoSenha" placeholder="Confirmar senha *"  />
 							</div>
 						</div>
 
@@ -105,11 +105,9 @@ layout:decorator="Layout/LayoutPadrao">
 				</div>
 
 
-			
-		</div>
-		<br/>
+				</div>
 
-		<!-- FIM CONTEUDO -->
-</div>
-</section>
-</html>
+			<!-- FIM CONTEUDO -->
+		</div>
+	</section>
+	</html>
