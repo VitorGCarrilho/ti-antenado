@@ -83,10 +83,22 @@ public class Usuario {
 	@JsonIgnore
 	private String dsSenha;
 	
+	@OneToMany
+	@JoinColumn(name="CD_ALUNO")
+	private List<Matricula> matriculas;
+	
 	@Transient
 	@NotNull
 	private String dsConfirmacaoSenha;
 	
+	public List<Matricula> getMatriculas() {
+		return matriculas;
+	}
+
+	public void setMatriculas(List<Matricula> matriculas) {
+		this.matriculas = matriculas;
+	}
+
 	public boolean isValidPassword(){
 		return !this.dsSenha.isEmpty() ? this.dsSenha.equals(this.dsConfirmacaoSenha) : false;
 	}

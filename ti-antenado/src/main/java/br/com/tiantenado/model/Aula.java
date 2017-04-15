@@ -1,6 +1,7 @@
 package br.com.tiantenado.model;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity(name = "TB_AULA")
@@ -23,6 +25,18 @@ public class Aula {
 	@OneToOne
 	@JoinColumn(name="CD_AULA")
 	private Curso curso;
+	
+	public List<Chamada> getChamadas() {
+		return chamadas;
+	}
+
+	public void setChamadas(List<Chamada> chamadas) {
+		this.chamadas = chamadas;
+	}
+
+	@OneToMany
+	@JoinColumn(name="CD_AULA")
+	private List<Chamada> chamadas;
 
 	public long getCdAula() {
 		return cdAula;

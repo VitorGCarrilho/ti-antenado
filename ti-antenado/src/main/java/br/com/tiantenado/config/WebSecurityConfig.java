@@ -42,6 +42,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		http	
 			.authorizeRequests()
 					.antMatchers("/api/rest/**").hasAuthority(TipoUsuario.P.getDsTipoUsuario().toUpperCase())
+					.antMatchers("/dashboard").hasAnyAuthority(TipoUsuario.P.getDsTipoUsuario().toUpperCase()
+															, TipoUsuario.A.getDsTipoUsuario().toUpperCase()
+															, TipoUsuario.R.getDsTipoUsuario().toUpperCase())
 					.antMatchers(
 										"/home"
 										,"/teste"
